@@ -1,3 +1,5 @@
+/* eslint-disable quotes */
+/* eslint-disable react/button-has-type */
 /* eslint-disable array-callback-return */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/jsx-props-no-spreading */
@@ -5,8 +7,8 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import client from '../../../lib/commerce';
-import Product from '../../../components/Product';
 import ProductList from '../../../components/ProductList';
 
 export async function getStaticProps({ params }) {
@@ -45,8 +47,6 @@ export async function getStaticPaths() {
     }));
   });
 
-  console.log('ciao');
-
   return {
     paths: [...mainCategoriesPath,
       { params: { slug: 'cibo-secco-per-gatti' } },
@@ -65,14 +65,45 @@ export async function getStaticPaths() {
 }
 
 export default function CategoryPage({ category, products }) {
+  const router = useRouter();
   return (
-    <div className="flex flex-col min-h-screen max-h-fit items-center gap-10 pt-36 lg:pt-36 lg:p-10">
-      <div>
-        <h1 className="lg:text-2xl">{category.name}</h1>
+    <div className="flex flex-col lg:flex-row justify-center  min-h-screen max-h-fit pt-36 p-10 gap-10 lg:pt-36 lg:p-10">
+      <div className="flex flex-col items-center justify-center w-full h-fit gap-10 lg:w-1/4 lg:mx-auto border-b-2 border-black lg:border-0 lg:p-0 pb-10">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-5">
+          <button
+            onClick={() => router.back()}
+            className="bg-yellow-400 hover:bg-yellow-300 font-bold py-2 px-4 rounded-full"
+          >
+            Indietro
+          </button>
+          <h1 className="lg:text-3xl text-2xl transition">
+            {category.name}
+          </h1>
+        </div>
+        <ul>
+          {category.children.map((subcategory) => (
+            <li key={subcategory.slug}>
+              <Link href={`/categories/${subcategory.slug}`}>
+                <p className="hover:scale-105 w-fit text-gray-800 hover:text-yellow-400
+                  transition text-lg lg:text-xl cursor-pointer"
+                >
+                  {subcategory.name}
+                </p>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
-      <div>
-        <ProductList products={products} />
+
+      <div className="flex w-full lg:w-3/4 flex-col justify-center items-center lg:mx-auto h-fit gap-10 lg:p-0 pb-10">
+        <div>
+          <h1 className="lg:text-3xl text-2xl transition">Prodotti</h1>
+        </div>
+        <div>
+          <ProductList products={products} />
+        </div>
       </div>
+
     </div>
   );
 }

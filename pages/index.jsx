@@ -35,8 +35,6 @@ export default function IndexPage({ merchant, categories, products }) {
           <CategoryList categories={categories} />
         </div>
 
-        {console.log(categories)}
-
       </div>
 
       <div className="flex w-full lg:w-3/4 flex-col justify-center items-center lg:mx-auto h-fit gap-10 lg:p-0 pb-10">
