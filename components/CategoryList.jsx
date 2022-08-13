@@ -27,11 +27,11 @@ export default function CategoryList({ categories }) {
         <>
           <li className="flex flex-row items-center gap-2 " key={category.slug}>
 
-            <Link href={`categories/${category.slug}`}>
-              <p className="hover:scale-105 text-gray-800 w-fit hover:text-yellow-400 transition text-xl lg:text-2xl cursor-pointer">{category.name}</p>
+            <Link href={`categorie/${category.slug}`}>
+              <p className="hover:scale-105 text-gray-800 w-fit hover:text-lime-400 transition text-xl lg:text-2xl cursor-pointer">{category.name}</p>
             </Link>
 
-            <div className={`hover:text-yellow-400 transition cursor-pointer ${!extended[index] ? "" : "text-yellow-700 font-extrabold"} `}>
+            <div className={`hover:text-lime-400 transition cursor-pointer ${!extended[index] ? "" : "text-lime-700 font-extrabold"} `}>
               { !extended[index]
                 ? <BsPlusLg onClick={handleClick(index)} />
                 : <HiOutlineMinusSm onClick={handleClick(index)} /> }
@@ -42,8 +42,8 @@ export default function CategoryList({ categories }) {
           <ul className={`pl-5 ${!extended[index] ? "hidden" : ""}`}>
             {category.children.map((subcategory) => (
               <li key={subcategory.slug}>
-                <Link href={`categories/${subcategory.slug}`}>
-                  <p className="hover:scale-105 w-fit text-gray-800 hover:text-yellow-400
+                <Link href={`categorie/${subcategory.slug}`}>
+                  <p className="hover:scale-105 w-fit text-gray-800 hover:text-lime-400
                   transition text-lg lg:text-xl cursor-pointer"
                   >
                     {subcategory.name}

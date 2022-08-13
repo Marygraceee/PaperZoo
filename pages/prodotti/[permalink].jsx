@@ -40,12 +40,12 @@ export default function ProductPage({ product }) {
   return (
     <div className="flex flex-col lg:flex-row min-h-screen max-h-fit mx-auto pt-36 p-2 gap-10 lg:pt-20 lg:p-10">
 
-      <div className="flex lg:flex-row flex-col shadow-md">
-        <div className="lg:w-1/2 flex justify-center items-center">
+      <div className="flex lg:flex-row flex-col shadow-2xl h-full w-full">
+        <div className="lg:w-1/2 flex justify-center items-center ">
           <img
             style={
             {
-              maxwidth: "70%", aspectRatio: "1/1", maxHeight: "90%", objectFit: "cover",
+              maxwidth: "50%", aspectRatio: "1/1", maxHeight: "70%", objectFit: "cover",
             }
             }
             src={product.image.url}
@@ -61,14 +61,17 @@ export default function ProductPage({ product }) {
              text-gray-600 font-light min-w-1/2 max-w-full"
             dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(description) }}
           />
-          <div>
-            <p>Categorie:</p>
+          <div className="flex flex-col items-center gap-5">
+            <p className="lg:text-2xl text-xl">Categorie:</p>
             <ul className="flex flex-row gap-5">
               {product.categories.map((category) => (
-                <li key={category.slug}>
-                  <Link href={`/categories/${category.slug}`}>
-                    <p className="hover:scale-105 w-fit text-gray-800 hover:text-yellow-400
-                  transition text-lg lg:text-xl cursor-pointer"
+                <li
+                  className="bg-gray-100 cursor-pointer p-5 rounded-full shadow-md hover:scale-105 text-gray-800 hover:text-lime-400 transition"
+                  key={category.slug}
+                >
+                  <Link href={`/categorie/${category.slug}`}>
+                    <p className="
+                   text-lg lg:text-xl "
                     >
                       {category.name}
                     </p>
@@ -80,7 +83,7 @@ export default function ProductPage({ product }) {
           </div>
           <div className="flex flex-row justify-start items-center gap-5 w-full">
             <p className="lg:text-3xl text-2xl">{product.price.formatted_with_symbol}</p>
-            <button className="lg:text-3xl text-2xl bg-yellow-400 hover:bg-yellow-300 transition font-bold py-4 px-6 gap-5 shadow-md rounded-full flex flex-row items-center justify-center">
+            <button className="lg:text-3xl text-sm bg-lime-400 hover:bg-lime-300 transition font-bold py-4 px-6 gap-5 shadow-md rounded-full flex flex-row items-center justify-center">
               <AiOutlineShoppingCart />
               Aggiungi al carrello
             </button>

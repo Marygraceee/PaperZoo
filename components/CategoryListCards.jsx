@@ -21,12 +21,12 @@ export default function CategoryListCards({ categories }) {
           {categories.map((category, index) => (
             <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 flex flex-col items-center">
 
-              <div className="bg-yellow-400 hover:bg-yellow-300 h-2/3 container flex flex-row justify-center items-center p-10 cursor-pointer">
-                <Link href={`categories/${category.slug}`}>
+              <div className="bg-lime-400 hover:bg-lime-300 h-2/3 container flex flex-row justify-center items-center p-10 cursor-pointer">
+                <Link href={`categorie/${category.slug}`}>
                   <img
                     style={{
-                      minWidth: "5rem%",
-                      minHeight: "5rem%",
+                      minWidth: "5rem",
+                      minHeight: "5rem",
                       maxWidth: "100%",
                       maxHeight: "100%",
                       aspectRatio: "1/1",
@@ -40,11 +40,11 @@ export default function CategoryListCards({ categories }) {
 
               <li className="flex flex-row items-center justify-center gap-2 p-2" key={category.slug}>
 
-                <Link href={`categories/${category.slug}`}>
-                  <p className=" text-xl lg:text-2xl font-bold tracking-tight text-gray-900 hover:text-yellow-400 transition cursor-pointer hover:scale-105">{category.name}</p>
+                <Link href={`categorie/${category.slug}`}>
+                  <p className=" text-xl lg:text-2xl font-bold tracking-tight text-gray-900 hover:text-lime-400 transition cursor-pointer hover:scale-105">{category.name}</p>
                 </Link>
 
-                <div className={`hover:text-yellow-400 transition cursor-pointer ${!extended[index] ? '' : 'text-yellow-700 font-extrabold'} `}>
+                <div className={`hover:text-lime-400 transition cursor-pointer ${!extended[index] ? '' : 'text-lime-700 font-extrabold'} `}>
                   { !extended[index]
                     ? <AiOutlineArrowRight onClick={handleClick(index)} />
                     : <AiOutlineArrowDown onClick={handleClick(index)} /> }
@@ -55,8 +55,8 @@ export default function CategoryListCards({ categories }) {
               <ul className={`${!extended[index] ? 'opacity-0' : ''} flex flex-col items-center transition`}>
                 {category.children.map((subcategory) => (
                   <li key={subcategory.slug}>
-                    <Link href={`categories/${subcategory.slug}`}>
-                      <p className="text-gray-700 hover:text-yellow-400 hover:scale-105 cursor-pointer transition lg:text-xl text-lg">
+                    <Link href={`categorie/${subcategory.slug}`}>
+                      <p className="text-gray-700 hover:text-lime-400 hover:scale-105 cursor-pointer transition lg:text-xl text-lg">
                         {subcategory.name}
                       </p>
                     </Link>

@@ -27,8 +27,8 @@ export default function IndexPage({ merchant, categories, products }) {
 
       <div className="flex flex-col items-center justify-center w-full h-fit gap-10 lg:w-1/4 lg:mx-auto border-b-2 border-black lg:border-0 lg:p-0 pb-10">
         <div className=" w-full flex justify-center ">
-          <Link href="/categories">
-            <a className="lg:text-3xl text-2xl hover:text-yellow-400 transition ">Categorie</a>
+          <Link href="/categorie">
+            <a className="lg:text-3xl text-2xl hover:text-lime-400 transition ">Categorie</a>
           </Link>
         </div>
         <div className="lg:w-full flex">
@@ -39,8 +39,8 @@ export default function IndexPage({ merchant, categories, products }) {
 
       <div className="flex w-full lg:w-3/4 flex-col justify-center items-center lg:mx-auto h-fit gap-10 lg:p-0 pb-10">
         <div>
-          <Link href="/products">
-            <a className="lg:text-3xl text-2xl hover:text-yellow-400 transition ">Prodotti</a>
+          <Link href="/prodotti">
+            <a className="lg:text-3xl text-2xl hover:text-lime-400 transition ">Prodotti</a>
           </Link>
 
         </div>

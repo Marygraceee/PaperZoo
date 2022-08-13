@@ -13,10 +13,10 @@ export default function ProductList({ products }) {
     <ul className="flex flex-col gap-5 container mx-auto">
       {products.map((product) => (
         <li
-          className="shadow-lg p-5 bg-yellow-400/80 hover:bg-yellow-300 hover:scale-[1.01] transition rounded-t-3xl w-full"
+          className="shadow-lg p-5 bg-lime-400 hover:bg-lime-300 hover:scale-[1.01] transition rounded-t-3xl w-full"
           key={product.permalink}
         >
-          <Link href={`/products/${product.permalink}`}>
+          <Link href={`/prodotti/${product.permalink}`}>
             <a>
               <Product product={product} />
             </a>
