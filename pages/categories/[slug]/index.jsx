@@ -67,43 +67,50 @@ export async function getStaticPaths() {
 export default function CategoryPage({ category, products }) {
   const router = useRouter();
   return (
-    <div className="flex flex-col lg:flex-row justify-center  min-h-screen max-h-fit pt-36 p-10 gap-10 lg:pt-36 lg:p-10">
-      <div className="flex flex-col items-center justify-center w-full h-fit gap-10 lg:w-1/4 lg:mx-auto border-b-2 border-black lg:border-0 lg:p-0 pb-10">
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-5">
-          <button
-            onClick={() => router.back()}
-            className="bg-yellow-400 hover:bg-yellow-300 font-bold py-2 px-4 rounded-full"
-          >
-            Indietro
-          </button>
-          <h1 className="lg:text-3xl text-2xl transition">
-            {category.name}
-          </h1>
-        </div>
-        <ul>
-          {category.children.map((subcategory) => (
-            <li key={subcategory.slug}>
-              <Link href={`/categories/${subcategory.slug}`}>
-                <p className="hover:scale-105 w-fit text-gray-800 hover:text-yellow-400
+    <div className="flex flex-col min-h-screen max-h-fit pt-36 p-10 gap-10 lg:pt-36 lg:p-10 bg-red-200">
+      <div className="bg-green-300 mx-auto flex flex-col items-center gap-5">
+        <h1 className="lg:text-3xl text-2xl transition">{category.name}</h1>
+        <p className="lg:text-2xl text-xl transition">{category.description}</p>
+      </div>
+      <div className="flex flex-col lg:flex-row justify-center ">
+        <div className="flex flex-col items-center justify-center w-full h-fit gap-10 lg:w-1/4 lg:mx-auto border-b-2 border-black lg:border-0 lg:p-0 pb-10">
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-5">
+            <button
+              onClick={() => router.back()}
+              className="bg-yellow-400 hover:bg-yellow-300 font-bold py-2 px-4 rounded-full shadow-md"
+            >
+              Indietro
+            </button>
+            <h1 className="lg:text-3xl text-2xl transition">
+              {category.name}
+            </h1>
+          </div>
+          <ul>
+            {category.children.map((subcategory) => (
+              <li key={subcategory.slug}>
+                <Link href={`/categories/${subcategory.slug}`}>
+                  <p className="hover:scale-105 w-fit text-gray-800 hover:text-yellow-400
                   transition text-lg lg:text-xl cursor-pointer"
-                >
-                  {subcategory.name}
-                </p>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="flex w-full lg:w-3/4 flex-col justify-center items-center lg:mx-auto h-fit gap-10 lg:p-0 pb-10">
-        <div>
-          <h1 className="lg:text-3xl text-2xl transition">Prodotti</h1>
+                  >
+                    {subcategory.name}
+                  </p>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
-        <div>
-          <ProductList products={products} />
-        </div>
-      </div>
 
+        <div className="flex w-full lg:w-3/4 flex-col justify-center items-center lg:mx-auto h-fit gap-10 lg:p-0 pb-10">
+          <div>
+            <h1 className="lg:text-3xl text-2xl transition">Prodotti</h1>
+          </div>
+          <div>
+            <ProductList products={products} />
+          </div>
+        </div>
+
+      </div>
     </div>
+
   );
 }

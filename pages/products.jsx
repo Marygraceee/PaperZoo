@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+import React from 'react';
 import client from '../lib/commerce';
 import ProductList from '../components/ProductList';
 

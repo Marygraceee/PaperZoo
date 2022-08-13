@@ -9,7 +9,7 @@ import React, { useState } from 'react';
 
 function NavLink({ to, children }) {
   return (
-    <a href={to} className="hover:text-yellow-400 transition mx-4">
+    <a href={to} className="flex flex-col items-center justify-center hover:text-yellow-400 border-b-4 border-transparent hover:border-yellow-400 transition mx-4 h-full ">
       {children}
     </a>
   );
@@ -38,12 +38,12 @@ function MobileNav({ open, setOpen }) {
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <nav className="flex filter drop-shadow-md bg-white py-4 h-20 items-center fixed top-0 w-full z-10 px-4 lg:px-24">
+    <nav className="flex filter drop-shadow-md bg-white  h-20 items-center fixed top-0 w-full z-10 px-4 lg:px-24">
       <MobileNav open={open} setOpen={setOpen} />
       <div className="w-3/12 flex items-center lg:text-2xl font-semibold">
         <Link href="/">LOGO</Link>
       </div>
-      <div className="w-9/12 flex justify-end items-center">
+      <div className="w-9/12 flex justify-end items-center  h-full">
 
         <div
           className="z-50 flex relative w-8 h-8 flex-col justify-between items-center md:hidden"
@@ -57,7 +57,7 @@ export default function Navbar() {
           <span className={`h-1 w-full bg-black rounded-lg transform transition duration-300 ease-in-out ${open ? '-rotate-45 -translate-y-3.5' : ''}`} />
         </div>
 
-        <div className="hidden md:flex lg:text-2xl gap-10">
+        <div className="hidden md:flex lg:text-2xl gap-10 h-full">
           <NavLink to="/contattaci">
             Contattaci
           </NavLink>
