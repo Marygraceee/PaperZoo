@@ -23,7 +23,7 @@ export async function getStaticProps() {
 
 export default function IndexPage({ merchant, categories, products }) {
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen max-h-fit mx-auto pt-36 p-2 gap-10 lg:pt-36 lg:p-10">
+    <div className="flex flex-col lg:flex-row min-h-screen max-h-fit mx-auto pt-36 p-2 gap-10 lg:pt-36 lg:p-5">
 
       <div className="flex flex-col items-center justify-center w-full h-fit gap-10 lg:w-1/4 lg:mx-auto border-b-2 border-black lg:border-0 lg:p-0 pb-10">
         <div className=" w-full flex justify-center ">

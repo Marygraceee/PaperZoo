@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable quotes */
 /* eslint-disable react/button-has-type */
 /* eslint-disable array-callback-return */
@@ -5,7 +7,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import client from '../../../lib/commerce';
@@ -65,11 +67,29 @@ export async function getStaticPaths() {
 }
 
 export default function CategoryPage({ category, products }) {
+  const mainImage = category.assets[1].url;
+  const alternativeImage = category.assets[0].url;
   const router = useRouter();
   return (
-    <div className="flex flex-col min-h-screen max-h-fit pt-36 p-10 gap-10 lg:pt-36 lg:p-10">
-      <div className=" mx-auto flex flex-col items-center gap-5 container w-full justify-center">
-        <p className="lg:text-2xl text-xl text-thin lg:w-2/3 flex justify-center">{category.description}</p>
+    <div className="flex flex-col min-h-screen max-h-fit pt-36 gap-10 lg:pt-36 lg:p-5">
+      <div className="relative w-full bg-red-200">
+
+
+
+        <img
+          style={{
+            width: "100%", maxHeight: "80vh", aspectRatio: "16/9", objectFit: "cover",
+          }}
+          src={mainImage}
+        />
+
+
+
+
+        <h1 className="absolute lg:text-5xl text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+          {category.description}
+        </h1>
+        {console.log(category.assets)}
       </div>
       <div className="flex flex-col lg:flex-row justify-center gap-5 ">
         <div className="flex flex-col items-center justify-center
@@ -96,6 +116,7 @@ export default function CategoryPage({ category, products }) {
                   transition text-xl lg:text-2xl cursor-pointer"
                   >
                     {subcategory.name}
+
                   </p>
                 </Link>
               </li>
