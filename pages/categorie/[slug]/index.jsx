@@ -71,14 +71,15 @@ export default function CategoryPage({ category, products }) {
   const alternativeImage = category.assets[0].url;
   const router = useRouter();
   return (
-    <div className="flex flex-col min-h-screen max-h-fit pt-36 gap-10 lg:pt-36 lg:p-5">
-      <div className="relative w-full bg-red-200">
+    <div className="flex flex-col min-h-screen max-h-fit pt-32 gap-10 lg:gap-20 lg:pt-32 lg:p-5">
+      <div className="relative w-full bg-lime-400 overflow-hidden">
 
 
 
-        <img
+        <img 
+          className="hover:scale-105 transition ease-in-out duration-500"
           style={{
-            width: "100%", maxHeight: "80vh", aspectRatio: "16/9", objectFit: "cover",
+            width: "100%", maxHeight: "82vh", aspectRatio: "16/9", objectFit: "cover", filter: "brightness(.5)",
           }}
           src={mainImage}
         />
@@ -86,12 +87,12 @@ export default function CategoryPage({ category, products }) {
 
 
 
-        <h1 className="absolute lg:text-5xl text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+        <h1 className="absolute lg:text-5xl text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center font-bold pointer-events-none">
           {category.description}
         </h1>
         {console.log(category.assets)}
       </div>
-      <div className="flex flex-col lg:flex-row justify-center gap-5 ">
+      <div className="flex flex-col lg:flex-row justify-center gap-5 min-h-screen max-h-fit ">
         <div className="flex flex-col items-center justify-center
          w-full h-fit gap-10 lg:w-1/4 lg:mx-auto border-b-2 border-black
          lg:border-0 lg:p-0 pb-10"
