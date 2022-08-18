@@ -74,9 +74,7 @@ export default function CategoryPage({ category, products }) {
     <div className="flex flex-col min-h-screen max-h-fit pt-32 gap-10 lg:gap-20 lg:pt-32 lg:p-5">
       <div className="relative w-full bg-lime-400 overflow-hidden">
 
-
-
-        <img 
+        <img
           className="hover:scale-105 transition ease-in-out duration-500"
           style={{
             width: "100%", maxHeight: "82vh", aspectRatio: "16/9", objectFit: "cover", filter: "brightness(.5)",
@@ -84,10 +82,7 @@ export default function CategoryPage({ category, products }) {
           src={mainImage}
         />
 
-
-
-
-        <h1 className="absolute lg:text-5xl text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center font-bold pointer-events-none">
+        <h1 className="absolute lg:text-4xl md:text-xl text-sm text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center font-bold pointer-events-none">
           {category.description}
         </h1>
         {console.log(category.assets)}

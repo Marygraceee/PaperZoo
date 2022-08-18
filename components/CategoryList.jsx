@@ -5,8 +5,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { BsPlusLg } from 'react-icons/bs';
-import { HiOutlineMinusSm } from "react-icons/hi";
+import { AiOutlineArrowDown, AiOutlineArrowRight } from "react-icons/ai";
 
 export default function CategoryList({ categories }) {
   const [extended, setExtended] = useState({});
@@ -33,8 +32,8 @@ export default function CategoryList({ categories }) {
 
             <div className={`hover:text-lime-400 transition cursor-pointer ${!extended[index] ? "" : "text-lime-700 font-extrabold"} `}>
               { !extended[index]
-                ? <BsPlusLg onClick={handleClick(index)} />
-                : <HiOutlineMinusSm onClick={handleClick(index)} /> }
+                ? <AiOutlineArrowRight onClick={handleClick(index)} />
+                : <AiOutlineArrowDown onClick={handleClick(index)} /> }
             </div>
 
           </li>
