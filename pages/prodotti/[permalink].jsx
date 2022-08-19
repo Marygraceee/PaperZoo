@@ -41,9 +41,9 @@ export default function ProductPage({ product }) {
     <div className="flex flex-col lg:flex-row min-h-screen max-h-fit mx-auto pt-36 p-2 gap-10 lg:pt-20 lg:p-10">
 
       <div className="flex lg:flex-row flex-col shadow-2xl h-full w-full">
-        <div className="lg:w-1/2 flex justify-center items-center bg-lime-400 hover:bg-lime-300 transition overflow-hidden">
+        <div className="lg:w-1/2 flex justify-center items-center bg-orange-400 hover:bg-orange-300 transition overflow-hidden">
           <img
-            className="bg-lime-400 hover:bg-lime-300 hover:scale-105 transition duration-500"
+            className="bg-orange-400 hover:bg-orange-300 hover:scale-105 transition duration-500"
             style={
             {
               maxwidth: "50%", aspectRatio: "1/1", maxHeight: "70%", objectFit: "cover",
@@ -67,7 +67,7 @@ export default function ProductPage({ product }) {
             <ul className="flex flex-row gap-5">
               {product.categories.map((category) => (
                 <li
-                  className="bg-gray-100 cursor-pointer p-5 rounded-full shadow-md hover:scale-105 text-gray-800 hover:text-lime-400 transition"
+                  className="bg-gray-100 cursor-pointer p-5 rounded-full shadow-md hover:scale-105 text-gray-800 hover:text-orange-400 transition"
                   key={category.slug}
                 >
                   <Link href={`/categorie/${category.slug}`}>
@@ -84,7 +84,7 @@ export default function ProductPage({ product }) {
           </div>
           <div className="flex flex-row justify-start items-center gap-5 w-full">
             <p className="lg:text-3xl text-2xl">{product.price.formatted_with_symbol}</p>
-            <button className="lg:text-3xl text-sm bg-lime-400 hover:bg-lime-300 transition font-bold py-4 px-6 gap-5 shadow-md rounded-full flex flex-row items-center justify-center">
+            <button className="lg:text-3xl text-sm bg-orange-400 hover:bg-orange-300 transition font-bold py-4 px-6 gap-5 shadow-md rounded-full flex flex-row items-center justify-center">
               <AiOutlineShoppingCart />
               Aggiungi al carrello
             </button>

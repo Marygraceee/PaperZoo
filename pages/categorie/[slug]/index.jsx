@@ -72,8 +72,7 @@ export default function CategoryPage({ category, products }) {
   const router = useRouter();
   return (
     <div className="flex flex-col min-h-screen max-h-fit pt-32 gap-10 lg:gap-20 lg:pt-32 lg:p-5">
-      <div className="relative w-full bg-lime-400 overflow-hidden">
-
+      <div className="relative w-full bg-orange-400 overflow-hidden">
         <img
           className="hover:scale-105 transition ease-in-out duration-500"
           style={{
@@ -95,7 +94,7 @@ export default function CategoryPage({ category, products }) {
           <div className="flex flex-col lg:flex-row justify-center items-center gap-5">
             <button
               onClick={() => router.back()}
-              className="bg-lime-400 hover:bg-lime-300 font-bold py-2 px-4 rounded-full shadow-md"
+              className="bg-orange-400 hover:bg-orange-300 font-bold py-2 px-4 rounded-full shadow-md"
             >
               Indietro
             </button>
@@ -108,7 +107,7 @@ export default function CategoryPage({ category, products }) {
             {category.children?.map((subcategory) => (
               <li key={subcategory.slug}>
                 <Link href={`/categorie/${subcategory.slug}`}>
-                  <p className="hover:scale-105 w-fit text-gray-800 hover:text-lime-400
+                  <p className="hover:scale-105 w-fit text-gray-800 hover:text-orange-400
                   transition text-xl lg:text-2xl cursor-pointer"
                   >
                     {subcategory.name}

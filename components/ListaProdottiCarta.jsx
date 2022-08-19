@@ -11,7 +11,7 @@ function ProductListCard({ products }) {
       {products.map((product) => (
         <Link href={`/prodotti/${product.permalink}`}>
           <div className="flex flex-col items-center justify-centershadow-xl shadow-lg
-        rounded-2xl container bg-lime-400 hover:bg-lime-300 w-full hover:cursor-pointer hover:scale-105 transition"
+        rounded-2xl container bg-orange-400 hover:bg-orange-300 w-full hover:cursor-pointer hover:scale-105 transition"
           >
 
             <div className="container flex flex-row justify-center items-center aspect-square w-full shadow-lg">
@@ -29,7 +29,7 @@ function ProductListCard({ products }) {
                 <h1 className="font-bold">Categorie:</h1>
                 {product.categories.map((category) => (
                   <li
-                    className="cursor-pointer rounded-full hover:scale-105 text-gray-800 hover:text-lime-900 transition"
+                    className="cursor-pointer rounded-full hover:scale-105 text-gray-800 hover:text-orange-900 transition"
                     key={category.slug}
                   >
                     <Link href={`/categorie/${category.slug}`}>

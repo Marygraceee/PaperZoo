@@ -23,33 +23,13 @@ export async function getStaticProps() {
 
 export default function IndexPage({ merchant, categories, products }) {
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen max-h-fit mx-auto pt-36 p-2 gap-10 lg:pt-36 lg:p-5">
-
-      <div className="flex flex-col items-center justify-center w-full h-fit gap-10 lg:w-1/4 lg:mx-auto border-b-2 border-black lg:border-0 lg:p-0 pb-10">
-        <div className=" w-full flex justify-center ">
-          <Link href="/categorie">
-            <a className="lg:text-3xl text-2xl hover:text-lime-400 transition ">Categorie</a>
-          </Link>
-        </div>
-        <div className="lg:w-full flex">
-          <CategoryList categories={categories} />
-        </div>
-
-      </div>
-
-      <div className="flex w-full lg:w-3/4 flex-col justify-center items-center lg:mx-auto h-fit gap-10 lg:p-0 pb-10">
-        <div>
-          <Link href="/prodotti">
-            <a className="lg:text-3xl text-2xl hover:text-lime-400 transition ">Prodotti</a>
-          </Link>
-
-        </div>
-        <div className="w-full">
-          <ProductList products={products} />
-        </div>
-
-      </div>
-
+<div>
+  <section id="hero" className="h-screen w-full bg-red-200 flex lg:flex-row flex-col justify-center items-center border-black border-4">
+    <div>
+      <h1>PaperZoo</h1>
+      <p>Il tuo pet shop!</p>
     </div>
+  </section>
+</div>
   );
 }

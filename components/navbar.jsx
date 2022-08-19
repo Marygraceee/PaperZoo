@@ -13,7 +13,7 @@ function NavLink({ to, children }) {
   return (
     <a
       href={to}
-      className="flex flex-col items-center justify-center hover:text-lime-400 hover:border-lime-400 first-letter
+      className="flex flex-col items-center justify-center hover:text-orange-400 hover:border-orange-400 first-letter
      border-b-4 border-transparent  transition mx-4 h-full font-extralight "
     >
       {children}
@@ -30,6 +30,12 @@ function MobileNav({ open, setOpen }) {
         <Link href="/">PaperZoo</Link>
       </div>
       <div className="flex flex-col ml-4">
+      <a className="text-2xl font-medium my-4" href="/categorie" onClick={() => setTimeout(() => { setOpen(!open); }, 100)}>
+          Categorie
+        </a>
+        <a className="text-2xl font-medium my-4" href="/prodotti" onClick={() => setTimeout(() => { setOpen(!open); }, 100)}>
+          Prodotti
+        </a>
         <a className="text-2xl font-medium my-4" href="/chi-siamo" onClick={() => setTimeout(() => { setOpen(!open); }, 100)}>
           Chi siamo
         </a>
@@ -65,7 +71,7 @@ export default function Fredoka() {
           <span className={`h-1 w-full bg-black rounded-lg transform transition duration-300 ease-in-out ${open ? '-rotate-45 -translate-y-3.5' : ''}`} />
         </div>
 
-        <div className="hidden md:flex lg:text-2xl gap-10 h-full">
+        <div className="hidden md:flex lg:text-xl gap-10 h-full">
           <NavLink to="/categorie">
             Categorie
           </NavLink>

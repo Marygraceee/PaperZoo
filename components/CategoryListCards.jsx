@@ -21,7 +21,7 @@ export default function CategoryListCards({ categories }) {
           {categories.map((category, index) => (
             <div key={category.slug} className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 flex flex-col items-center">
 
-              <div className="bg-lime-400 hover:bg-lime-300 h-2/3 container flex flex-row justify-center items-center p-10 cursor-pointer">
+              <div className="bg-orange-400 hover:bg-orange-300 h-2/3 container flex flex-row justify-center items-center p-10 cursor-pointer">
                 <Link href={`categorie/${category.slug}`}>
                   <img
                     style={{
@@ -41,10 +41,10 @@ export default function CategoryListCards({ categories }) {
               <li className="flex flex-row items-center justify-center gap-2 p-2" key={category.slug}>
 
                 <Link href={`categorie/${category.slug}`}>
-                  <p className=" text-xl lg:text-2xl tracking-tight text-gray-900 hover:text-lime-400 transition cursor-pointer hover:scale-105">{category.name}</p>
+                  <p className=" text-xl lg:text-2xl tracking-tight text-gray-900 hover:text-orange-400 transition cursor-pointer hover:scale-105">{category.name}</p>
                 </Link>
 
-                <div className={`hover:text-lime-400 transition cursor-pointer ${!extended[index] ? '' : 'text-lime-700'} `}>
+                <div className={`hover:text-orange-400 transition cursor-pointer ${!extended[index] ? '' : 'text-orange-700'} `}>
                   { !extended[index]
                     ? <AiOutlineArrowRight onClick={handleClick(index)} />
                     : <AiOutlineArrowDown onClick={handleClick(index)} /> }
@@ -56,7 +56,7 @@ export default function CategoryListCards({ categories }) {
                 {category.children.map((subcategory) => (
                   <li key={subcategory.slug}>
                     <Link href={`categorie/${subcategory.slug}`}>
-                      <p className="text-gray-700 hover:text-lime-400 hover:scale-105 cursor-pointer transition lg:text-xl text-lg">
+                      <p className="text-gray-700 hover:text-orange-400 hover:scale-105 cursor-pointer transition lg:text-xl text-lg">
                         {subcategory.name}
                       </p>
                     </Link>
