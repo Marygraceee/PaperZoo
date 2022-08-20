@@ -19,7 +19,7 @@ export default function CategoryListCards({ categories }) {
   return (
      <ul className="grid lg:grid-cols-3 gap-6 lg:rounded-lg w-full ">
           {categories.map((category, index) => (
-            <div key={category.slug} className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 flex flex-col items-center">
+            <div key={category.slug} className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md flex flex-col items-center">
 
               <div className="bg-orange-400 hover:bg-orange-300 h-2/3 container flex flex-row justify-center items-center p-10 cursor-pointer">
                 <Link href={`categorie/${category.slug}`}>

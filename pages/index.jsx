@@ -23,8 +23,8 @@ export async function getStaticProps() {
 
 export default function IndexPage({ merchant, categories, products }) {
   return (
-    <div className="flex flex-col min-h-screen max-h-fit gap-10 lg:gap-20 lg:p-5">
-      <section id="Hero" style={{ maxHeight: "85vh" }} className="relative w-full overflow-hidden">
+    <div className="flex flex-col min-h-screen max-h-fit">
+      <section id="HeroDesktop" className="relative w-full overflow-hidden lg:block hidden">
         <Image
           className="hover:scale-105 transition ease-in-out duration-500"
           style={{
@@ -33,13 +33,35 @@ export default function IndexPage({ merchant, categories, products }) {
           src={heroImage}
           alt="Hero"
         />
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/4 text-center pointer-events-none">
-          <h1 className="lg:text-4xl md:text-xl text-sm text-white font-bold">
-            Cerca fra più di 1.000 prodotti pensati per il benessere del tuo animale,
+        <div className="absolute top-1/4 -translate-y-1/4 left-1/2 -translate-x-1/2 text-center pointer-events-none">
+          <h1 className="lg:text-4xl text-lg text-white font-bold ">
+            Cerca tra moltissimi prodotti pensati per il benessere del tuo animale,
             per soddisfare le sue esigenze, ma anche le tue!
           </h1>
+          <button
+            type="button"
+            className=" pointer-events-auto lg:text-2xl bg-orange-400 text-white
+           hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 px-5 py-2 mt-5 rounded-lg">
+            <a href="/prodotti">Scopri i prodotti</a>
+          </button>
         </div>
 
+      </section>
+
+      <section id="HeroMobile" className="h-fit w-full lg:hidden flex flex-col items-center justify-start pt-20 p-5">
+        <div className="lg:hidden flex-col flex gap-5 justify-center items-center">
+          <h1 className="lg:text-4xl text-lg text-black font-bold ">
+            Cerca tra moltissimi prodotti pensati per il benessere del tuo animale,
+            per soddisfare le sue esigenze, ma anche le tue!
+          </h1>
+          <button
+            type="button"
+            className=" pointer-events-auto lg:text-2xl bg-orange-400 text-white
+           hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 px-5 py-2 rounded-lg"
+          >
+            <a href="/prodotti">Scopri i prodotti</a>
+          </button>
+        </div>
       </section>
     </div>
   );
