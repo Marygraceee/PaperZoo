@@ -24,7 +24,7 @@ export async function getStaticProps() {
 export default function IndexPage({ merchant, categories, products }) {
   return (
 <div>
-  <section id="hero" className="h-screen w-full bg-red-200 flex lg:flex-row flex-col justify-center items-center border-black border-4">
+  <section id="hero" className="h-screen w-full flex lg:flex-row flex-col justify-center items-center border-black border-4">
     <div>
       <h1>PaperZoo</h1>
       <p>Il tuo pet shop!</p>
