@@ -68,15 +68,14 @@ export async function getStaticPaths() {
 
 export default function CategoryPage({ category, products }) {
   const mainImage = category.assets[1].url;
-  const alternativeImage = category.assets[0].url;
   const router = useRouter();
   return (
-    <div className="flex flex-col min-h-screen max-h-fit pt-32 gap-10 lg:gap-20 lg:pt-32 lg:p-5">
+    <div className="flex flex-col min-h-screen max-h-fit gap-10 lg:gap-20 lg:p-5">
       <div className="relative w-full bg-orange-400 overflow-hidden">
         <img
           className="hover:scale-105 transition ease-in-out duration-500"
           style={{
-            width: "100%", maxHeight: "82vh", aspectRatio: "16/9", objectFit: "cover", filter: "brightness(.5)",
+            width: "100%", maxHeight: "85vh", aspectRatio: "16/9", objectFit: "cover", filter: "brightness(.5)",
           }}
           src={mainImage}
         />

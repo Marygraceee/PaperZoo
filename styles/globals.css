@@ -24,13 +24,7 @@ a {
   font-family: 'Fredoka One', cursive;
 }
 
-#hero{
-  background-image: url("../assets/HeroSection.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  filter: brightness(70%)
-  
-}
+
 
 @tailwind base;
 @tailwind components;
