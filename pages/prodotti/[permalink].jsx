@@ -84,7 +84,10 @@ export default function ProductPage({ product }) {
           </div>
           <div className="flex flex-row justify-start items-center gap-5 w-full">
             <p className="lg:text-3xl text-2xl">{product.price.formatted_with_symbol}</p>
-            <button className="lg:text-3xl text-sm bg-orange-400 hover:bg-orange-300 transition font-bold py-4 px-6 gap-5 shadow-md rounded-full flex flex-row items-center justify-center">
+            <button className="pointer-events-auto lg:text-2xl bg-orange-400 text-white
+           hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 px-5 py-2 rounded-full font-extrabold
+           flex flex-row items-center justify-center gap-5"
+            >
               <AiOutlineShoppingCart />
               Aggiungi al carrello
             </button>

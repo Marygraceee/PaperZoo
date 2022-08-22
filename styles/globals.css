@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Comfortaa', cursive;
  
 
 }
@@ -17,12 +17,32 @@ a {
 
 * {
   box-sizing: border-box;
+  
 }
 
 
 #Fredoka{
   font-family: 'Fredoka One', cursive;
 }
+
+.indicators{
+  gap: 0.2rem;
+}
+
+.indicator {
+cursor: pointer;
+border: 4px solid rgb(251 146 60);
+border-radius: 50%;
+width: 1rem;
+height: 1rem;
+box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.384);
+}
+
+.indicator.active {
+
+  background-color: rgb(251 146 60);
+}
+
 
 
 
