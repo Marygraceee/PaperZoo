@@ -8,6 +8,7 @@ import Image from 'next/image';
 import client from '../lib/commerce';
 import heroImage from '../public/heroimage.jpg';
 import CategorySlider from "../components/CategorySlider";
+import ProdottiScontati from "../components/ProdottiScontati"
 
 export async function getStaticProps() {
   const merchant = await client.merchants.about();
@@ -70,6 +71,11 @@ export default function IndexPage({ merchant, categories, products }) {
       <section id="Categorie" className="flex flex-col lg:gap-10 gap-5">
         <h1 className="mx-auto lg:text-5xl text-lg font-extrabold lg:leading-snug">Sfoglia le categorie!</h1>
         <CategorySlider categories={categories} />
+      </section>
+      {console.log(products)}
+      <section id="ProdottiScontati">
+        <h1>Prodotti scontati</h1>
+        <ProdottiScontati products={products} />
       </section>
     </div>
   );
