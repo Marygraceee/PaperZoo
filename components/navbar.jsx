@@ -13,7 +13,7 @@ function NavLink({ to, children }) {
   return (
     <a
       href={to}
-      className="flex flex-col items-center justify-center hover:text-orange-400 hover:border-orange-400 first-letter
+      className="flex w-[7rem] flex-col items-center justify-center hover:text-orange-400 hover:border-orange-400 first-letter
      border-b-4 border-transparent  transition mx-4 h-full font-extralight "
     >
       {children}
@@ -60,7 +60,7 @@ export default function Fredoka() {
       <div className="w-9/12 flex justify-end items-center  h-full">
 
         <div
-          className="z-50 flex relative w-8 h-8 flex-col justify-between items-center md:hidden"
+          className="z-50 flex relative w-8 h-8 flex-col justify-between items-center lg:hidden"
           onClick={() => {
             setOpen(!open);
           }}
@@ -71,7 +71,7 @@ export default function Fredoka() {
           <span className={`h-1 w-full bg-black rounded-lg transform transition duration-300 ease-in-out ${open ? '-rotate-45 -translate-y-3.5' : ''}`} />
         </div>
 
-        <div className="hidden md:flex lg:text-xl gap-10 h-full">
+        <div className="hidden lg:flex lg:text-xl gap-5 h-full">
           <NavLink to="/categorie">
             Categorie
           </NavLink>
