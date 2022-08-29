@@ -38,9 +38,9 @@ export async function getStaticPaths() {
 export default function ProductPage({ product }) {
   const description = product.description;
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen max-h-fit mx-auto pt-36 p-2 gap-10 lg:pt-20 lg:p-10">
+    <div className="">
 
-      <div className="flex lg:flex-row flex-col shadow-2xl h-full w-full">
+      <div className="flex shadow-lg">
         <div className="lg:w-1/2 flex justify-center items-center bg-orange-400 hover:bg-orange-300 transition overflow-hidden">
           <img
             className="bg-orange-400 hover:bg-orange-300 hover:scale-105 transition duration-500"

@@ -7,47 +7,47 @@
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
-import ProductList from './ProductList';
 import Link from 'next/link';
+import ProductList from './ProductList';
 
-const Example = ({ products }) => {
- 
+const Example = ({ products }) => (
+        <div className="grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 justify-items-center place-items-start gap-5 w-full">
 
-    return (
-        <div className="grid lg:grid-cols-5 grid-cols-1 justify-items-center place-items-start">
-          
            {products.map((product) => {
-            if (product.categories.filter(e => e.name === "Esotici" || e.name === "Roditori" || e.name === "Uccelli").length > 0){
+            if (product.categories.filter((e) => e.name === "Esotici" || e.name === "Roditori" || e.name === "Uccelli").length > 0) {
               return (
                 <Link href={`/prodotti/${product.permalink}`}>
                  <div
-                className="flex flex-col h-full w-full md:w-3/4 justify-between items-center shadow-lg hover:scale-105 transition duration-300 
-                cursor-pointer bg-orange-400 text-white hover:bg-white hover:text-orange-400 rounded-xl"
-                 key={product.permalink}>
+                   className="cursor-pointer aspect-square w-full h-full flex flex-col
+                  rounded-xl shadow-xl bg-orange-400 text-white hover:bg-white hover:text-orange-400 transition duration-300 hover:scale-105 "
+                   key={product.permalink}
+                 >
+                  <div className="aspect-video flex-2 w-full flex justify-center items-center shadow-lg overflow-hidden bg-white rounded-t-xl">
                   <img
-                  className="shadow-lg rounded-t-xl" 
-                  src={product.image.url} alt="" style={{ width: "100%", aspectRatio: "1/1", objectFit: "cover", }} />
-                  <div 
-                  style={{ borderRadius: "inherit" }}
-                  className="w-full h-full flex flex-col items-center text-center p-10 gap-5">
-                  <a className="lg:text-xl text-lg" href={`/prodotti/${product.permalink}`}>{product.name}</a>
-                  <p className="lg:text-lg text-normal">{product.price.formatted_with_symbol}</p>
-                  {console.log(product.price)}
-                  <p>Codice sconto: paperzoo</p>
+                    className="max-h-full rounded-t-xl"
+                    src={product.image.url}
+                    alt=""
+                  />
                   </div>
-                  
-                  
-                </div>
+
+                  <div
+
+                    className=" w-full flex flex-1 flex-col font-bold text-center transition items-center justify-center  gap-5 p-5"
+                  >
+                  <a className="lg:text-xl md:text-lg" href={`/prodotti/${product.permalink}`}>{product.name}</a>
+                  <p className="lg:text-lg">{product.price.formatted_with_symbol}</p>
+                  {console.log(product.price)}
+                  <p className="lg:text-xl md:text-lg">Codice sconto: paperzoo</p>
+                  </div>
+
+                 </div>
                 </Link>
-               
-              
-              )
-            } else return null
-            
+
+              );
+            } return null;
            })}
-        
+
         </div>
     );
-};
 
 export default Example;

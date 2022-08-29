@@ -17,7 +17,7 @@ export default function CategoryListCards({ categories }) {
     }));
   };
   return (
-     <ul className="grid lg:grid-cols-3 gap-6 lg:rounded-lg w-full ">
+     <ul className="grid lg:grid-cols-5 gap-5 lg:rounded-lg w-full ">
           {categories.map((category, index) => (
             <div key={category.slug} className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md flex flex-col items-center">
 

@@ -52,7 +52,7 @@ function MobileNav({ open, setOpen }) {
 export default function Fredoka() {
   const [open, setOpen] = useState(false);
   return (
-    <nav id="Fredoka" className="flex filter drop-shadow-lg bg-white  h-20 items-center sticky top-0 w-full z-10 px-4 lg:px-24">
+    <nav id="Fredoka" className="flex filter drop-shadow-lg bg-white  h-20 items-center sticky top-0 w-full z-50 px-4 lg:px-24">
       <MobileNav open={open} setOpen={setOpen} />
       <div className="w-3/12 flex items-center lg:text-2xl text-xl">
         <Link href="/">PaperZoo</Link>
@@ -75,8 +75,8 @@ export default function Fredoka() {
           <NavLink to="/categorie">
             Categorie
           </NavLink>
-          <NavLink to="/prodotti">
-            Prodotti
+          <NavLink to="/adotta">
+            Adotta
           </NavLink>
           <NavLink to="/chi-siamo">
             Chi siamo

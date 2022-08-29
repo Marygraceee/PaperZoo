@@ -8,7 +8,7 @@ import Image from 'next/image';
 import client from '../lib/commerce';
 import heroImage from '../public/heroimage.jpg';
 import CategorySlider from "../components/CategorySlider";
-import ProdottiScontati from "../components/ProdottiScontati"
+import ProdottiScontati from "../components/ProdottiScontati";
 
 export async function getStaticProps() {
   const merchant = await client.merchants.about();
@@ -46,7 +46,7 @@ export default function IndexPage({ merchant, categories, products }) {
             className=" pointer-events-auto lg:text-2xl bg-orange-400 text-white
            hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 px-5 py-2 mt-5 rounded-full font-extrabold"
           >
-            <a href="/prodotti">Scopri i prodotti</a>
+            <a href="/categorie">Scopri i prodotti</a>
           </button>
         </div>
 
@@ -73,7 +73,7 @@ export default function IndexPage({ merchant, categories, products }) {
         <CategorySlider categories={categories} />
       </section>
       {console.log(products)}
-      <section className="flex flex-col items-center gap-10 p-10" id="ProdottiScontati">
+      <section className="flex flex-col justify-center items-center bg-gray-100 w-full gap-5 p-5" id="ProdottiScontati">
         <h1 className="mx-auto lg:text-5xl text-2xl font-extrabold lg:leading-snug">Prodotti scontati</h1>
         <ProdottiScontati products={products} />
       </section>

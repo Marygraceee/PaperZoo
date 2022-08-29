@@ -18,9 +18,9 @@ export async function getStaticProps() {
 
 export default function CategoriesPage({ categories }) {
   return (
-    <div className="flex flex-col items-center  min-h-screen max-h-fit pt-36 p-10 gap-10 lg:pt-36 lg:p-10">
-      <div className=" w-full flex justify-center">
-        <h1 className="lg:text-3xl text-2xl">Tutte le categorie</h1>
+    <div className=" flex flex-col items-center p-5 gap-10 min-h-screen justify-center">
+      <div className="">
+        <h1 className="lg:text-5xl text-2xl">Tutte le categorie</h1>
       </div>
 
       <div>

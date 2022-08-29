@@ -10,10 +10,11 @@ export default function ProductList({ products }) {
   if (!products) return null;
 
   return (
-    <ul className="flex flex-col gap-5 container mx-auto">
+    <ul className="grid lg:grid-cols-2 grid-cols-1 gap-5 container mx-auto">
       {products.map((product) => (
         <li
-          className="shadow-lg p-5 bg-orange-400 hover:bg-orange-300 hover:scale-[1.01] transition rounded-t-3xl w-full"
+        className="cursor-pointer flex
+        rounded-xl shadow-xl bg-orange-400 text-white hover:bg-white hover:text-orange-400 transition duration-300 hover:scale-105 "
           key={product.permalink}
         >
           <Link href={`/prodotti/${product.permalink}`}>

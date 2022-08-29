@@ -70,7 +70,10 @@ export default function CategoryPage({ category, products }) {
   const mainImage = category.assets[1].url;
   const router = useRouter();
   return (
-    <div className="flex flex-col min-h-screen max-h-fit gap-10 lg:gap-20 lg:p-5">
+    <div className="flex flex-col">
+    
+
+
       <div className="relative w-full bg-orange-400 overflow-hidden">
         <img
           className="hover:scale-105 transition ease-in-out duration-500"
@@ -85,24 +88,29 @@ export default function CategoryPage({ category, products }) {
         </h1>
         {console.log(category.assets)}
       </div>
-      <div className="flex flex-col lg:flex-row justify-center gap-5 min-h-screen max-h-fit ">
-        <div className="flex flex-col items-center justify-center
-         w-full h-fit gap-10 lg:w-1/4 lg:mx-auto border-b-2 border-black
-         lg:border-0 lg:p-0 pb-10"
-        >
-          <div className="flex flex-col lg:flex-row justify-center items-center gap-5">
+
+
+
+      <div className="flex flex-col justify-center items-center gap-10">
+
+
+
+
+        <div className="flex flex-col items-center justify-center gap-5">
+
+        <div className="flex justify-center items-center">
             <button
               onClick={() => router.back()}
-              className="bg-orange-400 hover:bg-orange-300 font-bold py-2 px-4 rounded-full shadow-md"
+              className=" pointer-events-auto lg:text-xl bg-orange-400 text-white
+              hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 px-5 py-2 mt-5 rounded-full font-extrabold"
             >
               Indietro
             </button>
-            <h1 className="lg:text-2xl text-xl ">
-              {category.name}
-            </h1>
-          </div>
-          <ul className=" flex flex-col gap-2 items-center">
-            {category.children.length ? <h1 className="lg:text-xl text-lg text-gray-800">Categorie correlate:</h1> : null}
+           
+        </div>
+         
+          <ul className=" flex flex-col items-center justify-center gap-2">
+            {category.children.length ? <h1 className="lg:text-3xl text-lg text-gray-800">Categorie correlate:</h1> : null}
             {category.children?.map((subcategory) => (
               <li key={subcategory.slug}>
                 <Link href={`/categorie/${subcategory.slug}`}>
@@ -119,7 +127,9 @@ export default function CategoryPage({ category, products }) {
           </ul>
         </div>
 
-        <div className="flex w-full lg:w-3/4 flex-col justify-center items-center lg:mx-auto h-fit gap-10 lg:p-0 pb-10">
+  
+
+        <div className="flex flex-col justify-center items-center bg-gray-100 w-full gap-5 p-5">
           <div>
             <h1 className="lg:text-3xl text-2xl transition">Prodotti</h1>
           </div>

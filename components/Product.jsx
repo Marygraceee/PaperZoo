@@ -4,15 +4,15 @@ import React from 'react';
 
 export default function Product({ product }) {
   return (
-    <div className="flex flex-row container items-center justify-start gap-10 w-full">
+    <div className="flex p-5 gap-5">
 
-      <div>
-        <img className="rounded-2xl aspect-square shadow-xl" style={{ maxWidth: '10rem', minHeight: '100%', objectFit: 'cover' }} src={product.image.url} alt="" />
+      <div className="aspect-square flex items-center justify-center">
+        <img className="rounded-2xl shadow-xl" style={{ maxWidth: '8rem',  objectFit: 'cover', aspectRatio: "1/1" }} src={product.image.url} alt="" />
       </div>
 
-      <div className="flex flex-col w-full">
-        <p className='lg:text-2xl text-sm'>{product.name}</p>
-        <p className='lg:text-xl text-xs text-black/90'>{product.price.formatted_with_symbol}</p>
+      <div className=" flex  flex-col font-bold text-left transition gap-5 justify-center">
+        <p className='lg:text-2xl text-xl'>{product.name}</p>
+        <p className='lg:text-xl text-lg '>{product.price.formatted_with_symbol}</p>
       </div>
 
     </div>
