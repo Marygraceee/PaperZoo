@@ -7,6 +7,7 @@ import DOMPurify from 'isomorphic-dompurify';
 import Link from 'next/link';
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import client from '../../lib/commerce';
+import ProdottiCorrelati from "../../components/ProdottiCorrelati"
 
 export async function getStaticProps({ params }) {
   const { permalink } = params;
@@ -38,15 +39,15 @@ export async function getStaticPaths() {
 export default function ProductPage({ product }) {
   const description = product.description;
   return (
-    <div className="">
+    <div className="flex flex-col">
 
-      <div className="flex shadow-lg">
+      <div className="flex flex-col lg:h-screen lg:flex-row shadow-xl">
         <div className="lg:w-1/2 flex justify-center items-center bg-orange-400 hover:bg-orange-300 transition overflow-hidden">
           <img
-            className="bg-orange-400 hover:bg-orange-300 hover:scale-105 transition duration-500"
+            className="bg-orange-400 hover:bg-orange-300 hover:scale-105 transition duration-500 rounded-xl"
             style={
             {
-              maxwidth: "50%", aspectRatio: "1/1", maxHeight: "70%", objectFit: "cover",
+              width: "50%", aspectRatio: "1/1", maxHeight: "70%", objectFit: "cover",
             }
             }
             src={product.image.url}
@@ -96,6 +97,11 @@ export default function ProductPage({ product }) {
         </div>
 
       </div>
+
+      <section className="flex flex-col lg:gap-10 gap-5 p-5" id="ProdottiCorrelati">
+        <h1 className="mx-auto lg:text-5xl text-2xl font-extrabold lg:leading-snug">Prodotti correlati</h1>
+        <ProdottiCorrelati product={product} />
+      </section>
 
     </div>
   );
