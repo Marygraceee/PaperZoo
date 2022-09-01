@@ -36,6 +36,10 @@ export async function getStaticPaths() {
   };
 }
 
+const addToCart = (productId, quantity) => {
+  client.cart.add(productId, quantity);
+};
+
 export default function ProductPage({ product }) {
   const description = product.description;
   return (
@@ -85,7 +89,9 @@ export default function ProductPage({ product }) {
           </div>
           <div className="flex flex-row lg:justify-start justify-center items-center gap-5 w-full">
             <p className="lg:text-xl text-lg">{product.price.formatted_with_symbol}</p>
-            <button className="pointer-events-auto lg:text-xl md:text-lg text-base bg-orange-400 text-white
+            <button
+              onClick={() => addToCart(product.id, 1)}
+              className="pointer-events-auto lg:text-xl md:text-lg text-base bg-orange-400 text-white
            hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 lg:p-5 p-3 rounded-full font-extrabold
            flex flex-row items-center justify-center gap-2 lg:gap-5"
             >
