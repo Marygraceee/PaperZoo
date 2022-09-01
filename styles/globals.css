@@ -43,7 +43,13 @@ box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.384);
   background-color: rgb(251 146 60);
 }
 
+#HeroMobile{
+  
+  background-size: cover;
+  background:linear-gradient(rgb(255, 115, 0), rgba(112, 60, 0, 0.123)), url(../public/sfondo.jpg);
 
+
+}
 
 
 

@@ -70,11 +70,9 @@ export default function CategoryPage({ category, products }) {
   const mainImage = category.assets[1].url;
   const router = useRouter();
   return (
-    <div className="flex flex-col">
-    
+    <div className="flex flex-col gap-10">
 
-
-      <div className="relative w-full bg-orange-400 overflow-hidden">
+      <div className="relative w-full bg-orange-400 overflow-hidden shadow-xl">
         <img
           className="hover:scale-105 transition ease-in-out duration-500"
           style={{
@@ -83,39 +81,35 @@ export default function CategoryPage({ category, products }) {
           src={mainImage}
         />
 
-        <h1 className="absolute lg:text-4xl md:text-xl text-sm text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center font-bold pointer-events-none">
+        <h1 className="absolute lg:text-4xl md:text-3xl text-xl text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center font-bold pointer-events-none">
           {category.description}
         </h1>
         {console.log(category.assets)}
       </div>
 
-
-
       <div className="flex flex-col justify-center items-center gap-10">
-
-
-
 
         <div className="flex flex-col items-center justify-center gap-5">
 
-        <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center">
             <button
               onClick={() => router.back()}
-              className=" pointer-events-auto lg:text-xl bg-orange-400 text-white
-              hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 px-5 py-2 mt-5 rounded-full font-extrabold"
+              className="pointer-events-auto lg:text-xl md:text-lg text-base bg-orange-400 text-white
+              hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 lg:p-5 p-3 rounded-full font-extrabold
+              flex flex-row items-center justify-center gap-2 lg:gap-5"
             >
               Indietro
             </button>
-           
-        </div>
-         
+
+          </div>
+
           <ul className=" flex flex-col items-center justify-center gap-2">
-            {category.children.length ? <h1 className="lg:text-3xl text-lg text-gray-800">Categorie correlate:</h1> : null}
+            {category.children.length ? <h1 className="lg:text-3xl md:text-2xl text-xl text-gray-800">Categorie correlate:</h1> : null}
             {category.children?.map((subcategory) => (
               <li key={subcategory.slug}>
                 <Link href={`/categorie/${subcategory.slug}`}>
                   <p className="hover:scale-105 w-fit text-gray-800 hover:text-orange-400
-                  transition text-xl lg:text-2xl cursor-pointer"
+                  transition text-lg lg:text-xl cursor-pointer"
                   >
                     {subcategory.name}
 
@@ -127,11 +121,9 @@ export default function CategoryPage({ category, products }) {
           </ul>
         </div>
 
-  
-
         <div className="flex flex-col justify-center items-center bg-gray-100 w-full gap-5 p-5">
           <div>
-            <h1 className="lg:text-3xl text-2xl transition">Prodotti</h1>
+            <h1 className="lg:text-3xl md:text-2xl text-xl transition">Prodotti</h1>
           </div>
           <div>
             <ProductList products={products} />

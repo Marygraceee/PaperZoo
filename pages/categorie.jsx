@@ -20,7 +20,7 @@ export default function CategoriesPage({ categories }) {
   return (
     <div className=" flex flex-col items-center p-5 gap-10 min-h-screen justify-center">
       <div className="">
-        <h1 className="lg:text-5xl text-2xl">Tutte le categorie</h1>
+        <h1 className="lg:text-3xl md:text-2xl text-xl">Tutte le categorie</h1>
       </div>
 
       <div>

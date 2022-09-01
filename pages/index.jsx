@@ -37,13 +37,13 @@ export default function IndexPage({ merchant, categories, products }) {
           alt="Hero"
         />
         <div className="absolute w-full top-1/4 -translate-y-1/4 left-1/2 -translate-x-1/2 text-center pointer-events-none">
-          <h1 className="lg:text-5xl w-3/4 mx-auto text-lg text-white font-extrabold lg:leading-snug">
+          <h1 className="lg:text-4xl md:text-3xl text-xl w-3/4 mx-auto text-white font-extrabold lg:leading-snug">
             Cerca tra moltissimi prodotti pensati per il benessere del tuo animale,
             per soddisfare le sue esigenze, ma anche le tue!
           </h1>
           <button
             type="button"
-            className=" pointer-events-auto lg:text-2xl bg-orange-400 text-white
+            className=" pointer-events-auto lg:text-xl md:text-lg text-base bg-orange-400 text-white
            hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 px-5 py-2 mt-5 rounded-full font-extrabold"
           >
             <a href="/categorie">Scopri i prodotti</a>
@@ -52,29 +52,29 @@ export default function IndexPage({ merchant, categories, products }) {
 
       </section>
 
-      <section id="HeroMobile" className="h-fit w-full lg:hidden flex flex-col items-center justify-start pt-20 p-5">
-        <div className="lg:hidden flex-col flex gap-5 justify-center items-center">
-          <h1 className="lg:text-4xl text-lg text-black font-bold text-center">
+      <section id="HeroMobile" className="h-screen w-full lg:hidden flex flex-col items-center justify-center shadow-xl">
+        <div className="lg:hidden flex-col flex gap-5 justify-center items-center md:px-20 px-7">
+          <h1 className="md:text-3xl text-xl text-white font-extrabold text-center">
             Cerca tra moltissimi prodotti pensati per il benessere del tuo animale,
             per soddisfare le sue esigenze, ma anche le tue!
           </h1>
           <button
             type="button"
-            className=" pointer-events-auto lg:text-2xl bg-orange-400 text-white
+            className=" pointer-events-auto lg:text-xl md:text-lg text-base bg-orange-400 text-white
            hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 px-5 py-2 rounded-full shadow-lg"
           >
-            <a href="/prodotti">Scopri i prodotti</a>
+            <a href="/categorie">Scopri i prodotti</a>
           </button>
         </div>
       </section>
 
       <section id="Categorie" className="flex flex-col lg:gap-10 gap-5">
-        <h1 className="mx-auto lg:text-5xl text-2xl font-extrabold lg:leading-snug">Sfoglia le categorie!</h1>
+        <h1 className="mx-auto lg:text-3xl md:text-2xl text-xl font-extrabold lg:leading-snug">Sfoglia le categorie!</h1>
         <CategorySlider categories={categories} />
       </section>
       {console.log(products)}
       <section className="flex flex-col justify-center items-center bg-gray-100 w-full gap-5 p-5" id="ProdottiScontati">
-        <h1 className="mx-auto lg:text-5xl text-2xl font-extrabold lg:leading-snug">Prodotti scontati</h1>
+        <h1 className="mx-auto lg:text-3xl md:text-2xl text-xl font-extrabold lg:leading-snug">Prodotti scontati</h1>
         <ProdottiScontati products={products} />
       </section>
     </div>

@@ -41,7 +41,7 @@ export default function CategoryListCards({ categories }) {
               <li className="flex flex-row items-center justify-center gap-2 p-2" key={category.slug}>
 
                 <Link href={`categorie/${category.slug}`}>
-                  <p className=" text-xl lg:text-2xl tracking-tight text-gray-900 hover:text-orange-400 transition cursor-pointer hover:scale-105">{category.name}</p>
+                  <p className=" text-lg lg:text-xl tracking-tight text-gray-900 hover:text-orange-400 transition cursor-pointer hover:scale-105">{category.name}</p>
                 </Link>
 
                 <div className={`hover:text-orange-400 transition cursor-pointer scale-150 ${!extended[index] ? '' : 'text-orange-700'} `}>

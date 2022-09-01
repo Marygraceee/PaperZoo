@@ -16,7 +16,7 @@ const Example = ({ products }) => (
            {products.map((product) => {
             if (product.categories.filter((e) => e.name === "Esotici" || e.name === "Roditori" || e.name === "Uccelli").length > 0) {
               return (
-                <Link href={`/prodotti/${product.permalink}`}>
+                <Link key={product.permalink} href={`/prodotti/${product.permalink}`}>
                  <div
                    className="cursor-pointer aspect-square w-full h-full flex flex-col
                   rounded-xl shadow-xl bg-orange-400 text-white hover:bg-white hover:text-orange-400 transition duration-300 hover:scale-105 "
@@ -34,10 +34,10 @@ const Example = ({ products }) => (
 
                     className=" w-full flex flex-1 flex-col font-bold text-center transition items-center justify-center  gap-5 p-5"
                   >
-                  <a className="lg:text-xl md:text-lg" href={`/prodotti/${product.permalink}`}>{product.name}</a>
-                  <p className="lg:text-lg">{product.price.formatted_with_symbol}</p>
+                  <a className="lg:text-xl text-lg" href={`/prodotti/${product.permalink}`}>{product.name}</a>
+                  <p className="lg:text-xl text-lg">{product.price.formatted_with_symbol}</p>
                   {console.log(product.price)}
-                  <p className="lg:text-xl md:text-lg">Codice sconto: paperzoo</p>
+                  <p className="lg:text-xl text-lg">Codice sconto: paperzoo</p>
                   </div>
 
                  </div>

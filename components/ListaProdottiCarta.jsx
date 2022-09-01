@@ -10,13 +10,12 @@ function ProductListCard({ products }) {
       {console.log(products)}
       {products.map((product) => (
         <Link href={`/prodotti/${product.permalink}`}>
-          <div className=""
-          >
+          <div className="">
 
             <div className="">
               <img
                 className=""
-                
+
                 src={product.image.url}
                 alt=""
               />
@@ -32,8 +31,7 @@ function ProductListCard({ products }) {
                     key={category.slug}
                   >
                     <Link href={`/categorie/${category.slug}`}>
-                      <p className=""
-                      >
+                      <p className="">
                         {category.name}
                       </p>
                     </Link>

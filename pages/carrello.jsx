@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const carrello = () => {
-  return (
-    <div>carrello</div>
-  )
-}
+const carrello = () => (
+  <div>carrello</div>
+);
 
-export default carrello
+export default carrello;

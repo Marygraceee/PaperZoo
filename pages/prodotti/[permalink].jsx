@@ -7,7 +7,7 @@ import DOMPurify from 'isomorphic-dompurify';
 import Link from 'next/link';
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import client from '../../lib/commerce';
-import ProdottiCorrelati from "../../components/ProdottiCorrelati"
+import ProdottiCorrelati from "../../components/ProdottiCorrelati";
 
 export async function getStaticProps({ params }) {
   const { permalink } = params;
@@ -39,10 +39,10 @@ export async function getStaticPaths() {
 export default function ProductPage({ product }) {
   const description = product.description;
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-10">
 
       <div className="flex flex-col lg:h-screen lg:flex-row shadow-xl">
-        <div className="lg:w-1/2 flex justify-center items-center bg-orange-400 hover:bg-orange-300 transition overflow-hidden">
+        <div className="lg:w-1/2 flex justify-center items-center bg-orange-400 hover:bg-orange-300 transition overflow-hidden p-5">
           <img
             className="bg-orange-400 hover:bg-orange-300 hover:scale-105 transition duration-500 rounded-xl"
             style={
@@ -56,7 +56,7 @@ export default function ProductPage({ product }) {
         </div>
 
         <div className="flex flex-col gap-10 lg:items-start mx-auto items-center w-full justify-center lg:w-1/2  p-10">
-          <h1 className="lg:text-3xl text-2xl w-full">{product.name}</h1>
+          <h1 className="lg:text-3xl md:text-2xl text-xl w-full">{product.name}</h1>
           <div
             className="
             lg:text-xl text-lg
@@ -64,30 +64,30 @@ export default function ProductPage({ product }) {
             dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(description) }}
           />
           <div className="flex flex-col items-center gap-5">
-            <p className="lg:text-2xl text-xl">Categorie:</p>
+            <p className="lg:text-xl text-lg">Categorie:</p>
             <ul className="flex flex-row gap-5">
               {product.categories.map((category) => (
                 <li
-                  className="bg-gray-100 cursor-pointer p-5 rounded-full shadow-md hover:scale-105 text-gray-800 hover:text-orange-400 transition"
+                  className=""
                   key={category.slug}
                 >
                   <Link href={`/categorie/${category.slug}`}>
-                    <p className="
-                   text-lg lg:text-xl "
+                    <button className="
+                   bg-gray-100 cursor-pointer lg:p-5 p-3 rounded-full shadow-md hover:scale-105 text-gray-800 hover:text-orange-400 transition lg:text-xl md:text-lg text-base"
                     >
                       {category.name}
-                    </p>
+                    </button>
                   </Link>
                 </li>
 
               ))}
             </ul>
           </div>
-          <div className="flex flex-row justify-start items-center gap-5 w-full">
-            <p className="lg:text-3xl text-2xl">{product.price.formatted_with_symbol}</p>
-            <button className="pointer-events-auto lg:text-2xl bg-orange-400 text-white
-           hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 px-5 py-2 rounded-full font-extrabold
-           flex flex-row items-center justify-center gap-5"
+          <div className="flex flex-row lg:justify-start justify-center items-center gap-5 w-full">
+            <p className="lg:text-xl text-lg">{product.price.formatted_with_symbol}</p>
+            <button className="pointer-events-auto lg:text-xl md:text-lg text-base bg-orange-400 text-white
+           hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 lg:p-5 p-3 rounded-full font-extrabold
+           flex flex-row items-center justify-center gap-2 lg:gap-5"
             >
               <AiOutlineShoppingCart />
               Aggiungi al carrello
@@ -99,7 +99,7 @@ export default function ProductPage({ product }) {
       </div>
 
       <section className="flex flex-col lg:gap-10 gap-5 p-5" id="ProdottiCorrelati">
-        <h1 className="mx-auto lg:text-5xl text-2xl font-extrabold lg:leading-snug">Prodotti correlati</h1>
+        <h1 className="mx-auto lg:text-3xl md:text-2xl text-xl font-extrabold lg:leading-snug">Prodotti correlati</h1>
         <ProdottiCorrelati product={product} />
       </section>
 

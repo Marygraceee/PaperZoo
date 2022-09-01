@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const ChiSiamo = () => {
-  return (
-    <div>ChiSiamo</div>
-  )
+function ChiSiamo() {
+  return <div>ChiSiamo</div>;
 }
 
-export default ChiSiamo
+export default ChiSiamo;
