@@ -1,24 +1,24 @@
 import { useCartDispatch, useCartState } from "../context/cart";
 
-import client from "../lib/commerce";
+import commerce from "../lib/commerce";
 
 function CartItem({ id, name, quantity, line_total }) {
   const { setCart } = useCartDispatch();
 
   const handleUpdateCart = ({ cart }) => setCart(cart);
 
-  const removeItem = () => client.cart.remove(id).then(handleUpdateCart);
+  const removeItem = () => commerce.cart.remove(id).then(handleUpdateCart);
 
   const decrementQuantity = () => {
     quantity > 1
-      ? client.cart
+      ? commerce.cart
           .update(id, { quantity: quantity - 1 })
           .then(handleUpdateCart)
       : removeItem();
   };
 
   const incrementQuantity = () =>
-    client.cart.update(id, { quantity: quantity + 1 }).then(handleUpdateCart);
+    commerce.cart.update(id, { quantity: quantity + 1 }).then(handleUpdateCart);
 
   return (
     <div>

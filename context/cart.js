@@ -1,22 +1,13 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable object-curly-newline */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-use-before-define */
-/* eslint-disable react/jsx-no-constructed-context-values */
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable react/function-component-definition */
-/* eslint-disable react/prop-types */
-/* eslint-disable linebreak-style */
-/* eslint-disable quotes */
-import { createContext, useReducer, useContext, useEffect } from "react";
+import {
+  createContext, useReducer, useContext, useEffect,
+} from 'react';
 
-import commerce from "../lib/commerce";
+import commerce from '../lib/commerce';
 
 const CartStateContext = createContext();
 const CartDispatchContext = createContext();
 
-const SET_CART = "SET_CART";
+const SET_CART = 'SET_CART';
 
 const initialState = {
   total_items: 0,
@@ -33,7 +24,7 @@ const reducer = (state, action) => {
   }
 };
 
-export const CartProvider = ({ children }) => {
+export function CartProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
@@ -59,7 +50,7 @@ export const CartProvider = ({ children }) => {
       </CartStateContext.Provider>
     </CartDispatchContext.Provider>
   );
-};
+}
 
 export const useCartState = () => useContext(CartStateContext);
 export const useCartDispatch = () => useContext(CartDispatchContext);

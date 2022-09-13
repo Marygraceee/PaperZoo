@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import client from '../../lib/commerce';
 import ProdottiCorrelati from "../../components/ProdottiCorrelati";
+import { useCartDispatch } from "../../context/cart";
 
 export async function getStaticProps({ params }) {
   const { permalink } = params;
@@ -36,12 +37,12 @@ export async function getStaticPaths() {
   };
 }
 
-const addToCart = (productId, quantity) => {
-  client.cart.add(productId, quantity);
-};
-
 export default function ProductPage({ product }) {
   const description = product.description;
+  const { setCart } = useCartDispatch();
+
+  const addToCart = () => client.cart.add(product.id).then(({ cart }) => setCart(cart));
+
   return (
     <div className="flex flex-col gap-10">
 
@@ -90,7 +91,7 @@ export default function ProductPage({ product }) {
           <div className="flex flex-row lg:justify-start justify-center items-center gap-5 w-full">
             <p className="lg:text-xl text-lg">{product.price.formatted_with_symbol}</p>
             <button
-              onClick={() => addToCart(product.id, 1)}
+              onClick={addToCart}
               className="pointer-events-auto lg:text-xl md:text-lg text-base bg-orange-400 text-white
            hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 lg:p-5 p-3 rounded-full font-extrabold
            flex flex-row items-center justify-center gap-2 lg:gap-5"
@@ -99,7 +100,6 @@ export default function ProductPage({ product }) {
               Aggiungi al carrello
             </button>
           </div>
-          {console.log(product)}
         </div>
 
       </div>
