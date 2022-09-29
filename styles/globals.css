@@ -51,7 +51,10 @@ box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.384);
 
 }
 
-
+a:hover { color: red; }
+@media (hover: none) {
+    a:hover { color: inherit; }
+}
 
 
 @tailwind base;

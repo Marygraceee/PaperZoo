@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useState } from 'react';
 import client from '../lib/commerce';
 import { CarrelloVuoto } from '../components/CarrelloVuoto';
@@ -23,7 +24,7 @@ function Carrello() {
       </section>
       <section className="flex w-full flex-col">
         {cart.line_items.map((item) => (
-          <div key={item.name} className="flex w-full p-5 gap-10 justify-center border-b-2 border-black">
+          <div key={item.name} className="flex lg:flex-row flex-col w-full p-5 lg:gap-10 justify-center border-b-2 border-black">
             <div className="aspect-square flex items-center justify-center">
               <img className="rounded-2xl shadow-xl" style={{ maxWidth: '15rem', objectFit: 'cover', aspectRatio: '1/1' }} src={item.image.url} alt="" />
             </div>
@@ -31,31 +32,34 @@ function Carrello() {
               <p className="lg:text-xl text-lg">{item.name}</p>
               <p className="lg:text-xl text-lg">{item.price.formatted_with_symbol}</p>
 
-              <div className="flex justify-center items-center gap-2 p-10">
-                <button
-                  className=" pointer-events-auto lg:text-xl md:text-lg text-base bg-orange-400 text-white
+              <div className="flex lg:flex-row flex-col justify-center items-center gap-5 p-10">
+                <div className="flex justify-center items-center gap-5">
+                  <button
+                    className=" pointer-events-auto lg:text-xl md:text-lg text-base bg-orange-400 text-white
            hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 px-5 py-2 rounded-full font-extrabold"
-                  type="button"
-                  onClick={() => {
-                    client.cart.update(item.id, { quantity: item.quantity - 1 }).then((response) => setCart(response));
-                  }}
-                >
-                  -
-                </button>
-                <p className="lg:text-xl text-lg">
-                  Quantità:
-                  {` ${item.quantity}`}
-                </p>
-                <button
-                  className=" pointer-events-auto lg:text-xl md:text-lg text-base bg-orange-400 text-white
+                    type="button"
+                    onClick={() => {
+                      client.cart.update(item.id, { quantity: item.quantity - 1 }).then((response) => setCart(response));
+                    }}
+                  >
+                    -
+                  </button>
+                  <p className="lg:text-xl text-lg">
+                    Quantità:
+                    {` ${item.quantity}`}
+                  </p>
+                  <button
+                    className=" pointer-events-auto lg:text-xl md:text-lg text-base bg-orange-400 text-white
            hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 px-5 py-2 rounded-full font-extrabold"
-                  type="button"
-                  onClick={() => {
-                    client.cart.update(item.id, { quantity: item.quantity + 1 }).then((response) => setCart(response));
-                  }}
-                >
-                  +
-                </button>
+                    type="button"
+                    onClick={() => {
+                      client.cart.update(item.id, { quantity: item.quantity + 1 }).then((response) => setCart(response));
+                    }}
+                  >
+                    +
+                  </button>
+                </div>
+
                 <button
                   className=" pointer-events-auto lg:text-xl md:text-lg text-base bg-red-600 text-white
            hover:text-red-600 hover:bg-transparent border-2 border-red-600 transition duration-300 px-5 py-2 rounded-full font-extrabold"
