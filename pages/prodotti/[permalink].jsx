@@ -8,7 +8,6 @@ import Link from 'next/link';
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import client from '../../lib/commerce';
 import ProdottiCorrelati from "../../components/ProdottiCorrelati";
-import { useCartDispatch } from "../../context/cart";
 
 export async function getStaticProps({ params }) {
   const { permalink } = params;
@@ -20,6 +19,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       product,
+
     },
   };
 }
@@ -39,9 +39,8 @@ export async function getStaticPaths() {
 
 export default function ProductPage({ product }) {
   const description = product.description;
-  const { setCart } = useCartDispatch();
 
-  const addToCart = () => client.cart.add(product.id).then(({ cart }) => setCart(cart));
+  const addToCart = () => client.cart.add(product.id, 1);
 
   return (
     <div className="flex flex-col gap-10">

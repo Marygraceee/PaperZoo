@@ -72,7 +72,7 @@ export default function IndexPage({ merchant, categories, products }) {
         <h1 className="mx-auto lg:text-3xl md:text-2xl text-xl font-extrabold lg:leading-snug">Sfoglia le categorie!</h1>
         <CategorySlider categories={categories} />
       </section>
-      {console.log(products)}
+
       <section className="flex flex-col justify-center items-center bg-gray-100 w-full gap-5 p-5" id="ProdottiScontati">
         <h1 className="mx-auto lg:text-3xl md:text-2xl text-xl font-extrabold lg:leading-snug">Prodotti scontati</h1>
         <ProdottiScontati products={products} />
