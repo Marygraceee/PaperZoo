@@ -37,7 +37,7 @@ function Carrello() {
            hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 px-5 py-2 rounded-full font-extrabold"
                   type="button"
                   onClick={() => {
-                    client.cart.update(item.id, { quantity: item.quantity - 1 }).then(client.cart.retrieve().then(((response) => setCart(response))));
+                    client.cart.update(item.id, { quantity: item.quantity - 1 }).then((response) => setCart(response));
                   }}
                 >
                   -
@@ -51,7 +51,7 @@ function Carrello() {
            hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 px-5 py-2 rounded-full font-extrabold"
                   type="button"
                   onClick={() => {
-                    client.cart.update(item.id, { quantity: item.quantity + 1 }).then(client.cart.retrieve().then(((response) => console.log(response))));
+                    client.cart.update(item.id, { quantity: item.quantity + 1 }).then((response) => setCart(response));
                   }}
                 >
                   +
@@ -60,6 +60,10 @@ function Carrello() {
                   className=" pointer-events-auto lg:text-xl md:text-lg text-base bg-red-600 text-white
            hover:text-red-600 hover:bg-transparent border-2 border-red-600 transition duration-300 px-5 py-2 rounded-full font-extrabold"
                   type="button"
+                  onClick={() => {
+                    client.cart.remove(item.id).then((response) => setCart(response));
+                  }}
+
                 >
                   Rimuovi dal carrello
                 </button>
@@ -87,7 +91,5 @@ function Carrello() {
     </div>
   );
 }
-
-
 
 export default Carrello;
