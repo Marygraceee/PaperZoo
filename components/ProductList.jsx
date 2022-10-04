@@ -13,15 +13,10 @@ export default function ProductList({ products }) {
     <ul className="grid lg:grid-cols-2 grid-cols-1 gap-5 container mx-auto">
       {products.map((product) => (
         <li
-          className="cursor-pointer flex
-        rounded-xl shadow-xl bg-orange-400 text-white hover:bg-white hover:text-orange-400 transition duration-300 hover:scale-105 "
+          className="flex rounded-xl shadow-xl bg-white text-black transition duration-300 hover:scale-105 "
           key={product.permalink}
         >
-          <Link href={`/prodotti/${product.permalink}`}>
-            <a>
-              <Product product={product} />
-            </a>
-          </Link>
+          <Product product={product} />
         </li>
       ))}
     </ul>

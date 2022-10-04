@@ -84,7 +84,7 @@ export default function CategoryPage({ category, products }) {
         <h1 className="absolute lg:text-4xl md:text-3xl text-xl text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center font-bold pointer-events-none">
           {category.description}
         </h1>
-        {console.log(category.assets)}
+
       </div>
 
       <div className="flex flex-col justify-center items-center gap-10">
@@ -121,7 +121,7 @@ export default function CategoryPage({ category, products }) {
           </ul>
         </div>
 
-        <div className="flex flex-col justify-center items-center bg-gray-100 w-full gap-5 p-5">
+        <div className="flex flex-col justify-center items-center bg-gray-100 w-full gap-5 p-10">
           <div>
             <h1 className="lg:text-3xl md:text-2xl text-xl transition">Prodotti</h1>
           </div>

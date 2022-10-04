@@ -19,7 +19,7 @@ const Example = ({ categories }) => {
             <div key={category.slug} className="flex flex-col items-center justify-center w-1/2 mx-auto container gap-5">
                 <a href={`/categorie/${category.slug}`} className="lg:text-2xl md:text-xl text-lg hover:text-orange-400 transition duration-300">{category.name}</a>
                 <Link href={`/categorie/${category.slug}`}>
-                <img className="cursor-pointer hover:scale-105 transition duration-300 p-5" src={category.assets[0].url} style={{ maxWidth: "100%" }} alt="" />
+                <img className="cursor-pointer hover:scale-105 transition duration-300 p-5" src={category.assets[0].url} style={{ maxWidth: "50%" }} alt="" />
                 </Link>
 
             </div>

@@ -7,7 +7,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 function ProductListCard({ products }) {
   return (
     <div className="">
-      {console.log(products)}
+
       {products.map((product) => (
         <Link href={`/prodotti/${product.permalink}`}>
           <div className="">
