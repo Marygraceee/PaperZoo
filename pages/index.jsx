@@ -27,7 +27,7 @@ export async function getStaticProps() {
 export default function IndexPage({ merchant, categories, products }) {
   return (
     <div className="flex flex-col w-full gap-10">
-      <section id="HeroDesktop" className="relative w-full overflow-hidden hidden shadow-lg shadow-gray-400 lg:flex">
+      <section id="HeroDesktop" className="relative w-full h-screen overflow-hidden hidden shadow-lg shadow-gray-400 lg:flex">
         <Image
           className="hover:scale-105 transition ease-in-out duration-500 h-full"
           style={{
@@ -36,7 +36,7 @@ export default function IndexPage({ merchant, categories, products }) {
           src={heroImage}
           alt="Hero"
         />
-        <div className="absolute w-full top-1/4 -translate-y-1/4 left-1/2 -translate-x-1/2 text-center pointer-events-none">
+        <div className="absolute w-full top-2/4 -translate-y-2/4 left-1/2 -translate-x-1/2 text-center pointer-events-none">
           <h1 className="lg:text-4xl md:text-3xl text-xl w-3/4 mx-auto text-white font-extrabold lg:leading-snug">
             Cerca tra moltissimi prodotti pensati per il benessere del tuo animale,
             per soddisfare le sue esigenze, ma anche le tue!

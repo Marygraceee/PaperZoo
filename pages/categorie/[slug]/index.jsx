@@ -72,16 +72,16 @@ export default function CategoryPage({ category, products }) {
   return (
     <div className="flex flex-col gap-10">
 
-      <div className="relative w-full bg-orange-400 overflow-hidden shadow-xl">
+      <div className="relative w-full lg:h-screen h-fit bg-orange-400 overflow-hidden shadow-xl">
         <img
           className="hover:scale-105 transition ease-in-out duration-500"
           style={{
-            width: "100%", maxHeight: "85vh", aspectRatio: "16/9", objectFit: "cover", filter: "brightness(.5)",
+            aspectRatio: "16/9", objectFit: "cover", filter: "brightness(.5)",
           }}
           src={mainImage}
         />
 
-        <h1 className="absolute lg:text-4xl md:text-3xl text-xl text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center font-bold pointer-events-none">
+        <h1 className="absolute lg:text-4xl md:text-3xl text-xl text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center font-bold pointer-events-none lg:w-fit w-full">
           {category.description}
         </h1>
 

@@ -58,10 +58,10 @@ function MobileNav({ open, setOpen }) {
   );
 }
 
-export default function Fredoka() {
+export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <nav id="Fredoka" className="flex filter drop-shadow-lg bg-white  h-20 items-center justify-between sticky top-0 w-full z-50 px-4 lg:px-20">
+    <nav id="Fredoka" className="flex filter drop-shadow-lg bg-white h-20 items-center justify-between sticky top-0 w-full z-50 px-4 lg:px-20">
       <MobileNav open={open} setOpen={setOpen} />
       <div className="flex items-center w-1/3 md:w-1/5 lg:w-1/12 scale-110 hover:scale-125 cursor-pointer transition duration-300 object-cover ">
         <Link href="/">
