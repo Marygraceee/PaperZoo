@@ -42,8 +42,8 @@ function MobileNav({ open, setOpen }) {
         <a className="text-xl font-medium my-4" href="/categorie" onClick={() => setTimeout(() => { setOpen(!open); }, 100)}>
           Categorie
         </a>
-        <a className="text-xl font-medium my-4" href="/prodotti" onClick={() => setTimeout(() => { setOpen(!open); }, 100)}>
-          Prodotti
+        <a className="text-xl font-medium my-4" href="/adotta" onClick={() => setTimeout(() => { setOpen(!open); }, 100)}>
+          Adotta
         </a>
         <a className="text-xl font-medium my-4" href="/chi-siamo" onClick={() => setTimeout(() => { setOpen(!open); }, 100)}>
           Chi siamo

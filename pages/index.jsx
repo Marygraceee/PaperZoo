@@ -52,7 +52,7 @@ export default function IndexPage({ merchant, categories, products }) {
 
       </section>
 
-      <section id="HeroMobile" className="h-screen w-full lg:hidden flex flex-col items-center justify-center shadow-xl">
+      <section id="HeroMobile" className=" h-fit py-20 w-full lg:hidden flex flex-col items-center justify-center shadow-xl">
         <div className="lg:hidden flex-col flex gap-5 justify-center items-center md:px-20 px-7">
           <h1 className="md:text-3xl text-xl text-white font-extrabold text-center">
             Cerca tra moltissimi prodotti pensati per il benessere del tuo animale,

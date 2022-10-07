@@ -8,12 +8,16 @@ import React from 'react';
 import 'react-slideshow-image/dist/styles.css';
 import Link from 'next/link';
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import client from '../lib/commerce';
+
+
 
 const Example = ({ products }) => (
         <div className="grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 justify-items-center place-items-start gap-5 w-full">
 
            {products.map((product) => {
             if (product.categories.filter((e) => e.name === "Esotici" || e.name === "Roditori" || e.name === "Uccelli").length > 0) {
+              const addToCart = (e) => client.cart.add(product.id, 1);
               return (
                  <div
                    key={product.permalink}
@@ -39,7 +43,7 @@ const Example = ({ products }) => (
                   <p className="lg:text-xl text-lg w-full text-gray-500">Codice sconto: paperzoo</p>
                   <div className="flex w-full justify-center items-center">
                   <p className="lg:text-2xl text-lg w-full text-orange-400">{product.price.formatted_with_symbol}</p>
-                  <button type="button" className="bg-orange-400 hover:bg-orange-300 p-5 rounded-full text-xl">
+                  <button onClick={addToCart} type="button" className="bg-orange-400 active:bg-orange-400 hover:bg-orange-300 p-5 rounded-full text-xl">
                   <AiOutlineShoppingCart />
                   </button>
 
