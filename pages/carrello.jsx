@@ -24,19 +24,20 @@ function Carrello() {
       </section>
       <section className="flex w-full flex-col">
         {cart.line_items.map((item) => (
-          <div key={item.name} className="flex lg:flex-row flex-col w-full p-5 lg:gap-10 justify-center border-b-2 border-black">
-            <div className="aspect-square flex items-center justify-center">
-              <img className="rounded-2xl shadow-xl" style={{ maxWidth: '15rem', objectFit: 'cover', aspectRatio: '1/1' }} src={item.image.url} alt="" />
+          <div key={item.name} className="flex lg:flex-row flex-col w-full p-5 lg:gap-10 gap-5 justify-center border-b-2 border-black">
+            <div className="hover:scale-105 transition duration-300 ease-in-out flex justify-center items-center">
+              <a href={`/prodotti/${item.permalink}`}>
+                <img className="rounded-2xl shadow-xl" style={{ maxWidth: '10rem', objectFit: 'cover', aspectRatio: '1/1' }} src={item.image.url} alt="" />
+              </a>
             </div>
             <div className="flex flex-col items-center justify-center">
-              <p className="lg:text-xl text-lg">{item.name}</p>
+              <a className="lg:text-xl text-lg w-full font-extrabold hover:text-orange-400 hover:scale-105 transition duration-300 ease-in-out text-center" href={`/prodotti/${item.permalink}`}>{item.name}</a>
               <p className="lg:text-xl text-lg">{item.price.formatted_with_symbol}</p>
 
               <div className="flex lg:flex-row flex-col justify-center items-center gap-5 p-10">
                 <div className="flex justify-center items-center gap-5">
                   <button
-                    className=" pointer-events-auto lg:text-xl md:text-lg text-base bg-orange-400 text-white
-           hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 px-5 py-2 rounded-full font-extrabold"
+                    className="bg-orange-400 active:bg-orange-400 hover:bg-orange-300 px-5 rounded-full text-xl"
                     type="button"
                     onClick={() => {
                       client.cart.update(item.id, { quantity: item.quantity - 1 }).then((response) => setCart(response));
@@ -49,8 +50,7 @@ function Carrello() {
                     {` ${item.quantity}`}
                   </p>
                   <button
-                    className=" pointer-events-auto lg:text-xl md:text-lg text-base bg-orange-400 text-white
-           hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 px-5 py-2 rounded-full font-extrabold"
+                    className="bg-orange-400 active:bg-orange-400 hover:bg-orange-300 px-5 rounded-full text-xl"
                     type="button"
                     onClick={() => {
                       client.cart.update(item.id, { quantity: item.quantity + 1 }).then((response) => setCart(response));
@@ -61,8 +61,7 @@ function Carrello() {
                 </div>
 
                 <button
-                  className=" pointer-events-auto lg:text-xl md:text-lg text-base bg-red-600 text-white
-           hover:text-red-600 hover:bg-transparent border-2 border-red-600 transition duration-300 px-5 py-2 rounded-full font-extrabold"
+                  className=" bg-red-600 active:bg-red-600 hover:bg-red-500 text-white px-5 py-2 rounded-full text-xl"
                   type="button"
                   onClick={() => {
                     client.cart.remove(item.id).then((response) => setCart(response));

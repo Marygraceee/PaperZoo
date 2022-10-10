@@ -5,7 +5,7 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import client from '../lib/commerce';
 
 export default function Product({ product }) {
-  const addToCart = (e) => client.cart.add(product.id, 1)
+  const addToCart = (e) => client.cart.add(product.id, 1);
   return (
     <div className="flex bg-white text-black lg:flex-row flex-col p-5 gap-5 hover:scale-105 transition duration-300 ease-in-out">
 

@@ -10,10 +10,8 @@ import Link from 'next/link';
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import client from '../lib/commerce';
 
-
-
 const Example = ({ products }) => (
-        <div className="grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 justify-items-center place-items-start gap-5 w-full">
+        <div className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-1 justify-items-center place-items-start gap-5 w-full">
 
            {products.map((product) => {
             if (product.categories.filter((e) => e.name === "Esotici" || e.name === "Roditori" || e.name === "Uccelli").length > 0) {

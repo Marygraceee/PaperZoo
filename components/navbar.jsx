@@ -6,10 +6,11 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import Link from 'next/link';
 import { BsCart } from "react-icons/bs";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 import CartButton from './CartButton';
 import Logo from "../public/paperzoo.png";
+import client from '../lib/commerce';
 
 function NavLink({ to, children }) {
   return (
@@ -42,12 +43,6 @@ function MobileNav({ open, setOpen }) {
         <a className="text-xl font-medium my-4" href="/categorie" onClick={() => setTimeout(() => { setOpen(!open); }, 100)}>
           Categorie
         </a>
-        <a className="text-xl font-medium my-4" href="/adotta" onClick={() => setTimeout(() => { setOpen(!open); }, 100)}>
-          Adotta
-        </a>
-        <a className="text-xl font-medium my-4" href="/chi-siamo" onClick={() => setTimeout(() => { setOpen(!open); }, 100)}>
-          Chi siamo
-        </a>
         <a className="text-xl font-normal my-4" href="/contattaci" onClick={() => setTimeout(() => { setOpen(!open); }, 100)}>
           Contattaci
         </a>
@@ -60,8 +55,26 @@ function MobileNav({ open, setOpen }) {
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [trasparente, setTrasparente] = useState(false);
+  const [clientWindowHeight, setClientWindowHeight] = useState("");
+
+  const handleScroll = () => {
+    setClientWindowHeight(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    if (clientWindowHeight > 0) {
+      setTrasparente(true);
+    } else {
+      setTrasparente(false);
+    }
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
   return (
-    <nav id="Fredoka" className="flex filter drop-shadow-lg bg-white h-20 items-center justify-between sticky top-0 w-full z-50 px-4 lg:px-20">
+    <nav id="Fredoka" className={`flex filter drop-shadow-lg bg-white ${trasparente ? ' bg-opacity-70' : 'bg-opacity-100'} backdrop-blur-sm hover:bg-opacity-100 transition duration-500 ease-in-out h-20 items-center justify-between sticky top-0 w-full z-50 px-4 lg:px-20`}>
       <MobileNav open={open} setOpen={setOpen} />
       <div className="flex items-center w-1/3 md:w-1/5 lg:w-1/12 scale-110 hover:scale-125 cursor-pointer transition duration-300 object-cover ">
         <Link href="/">
@@ -72,6 +85,18 @@ export default function Navbar() {
           />
         </Link>
       </div>
+
+      <div className="w-full h-full hidden lg:flex justify-center items-center">
+        <input
+          onKeyDown={(e) => { e.key === "Enter" ? client.products.list().then((product) => console.log(product)) : console.log("no"); }}
+          className="border-2 border-gray-500 w-6/12 rounded-full px-5 py-1"
+          type="text"
+          placeholder="Cerca"
+          name="cerca"
+          id="cerca"
+        />
+      </div>
+
       <div className=" flex justify-end items-center  h-full">
 
         <div
@@ -89,12 +114,6 @@ export default function Navbar() {
         <div className="hidden lg:flex lg:text-xl gap-5 h-full">
           <NavLink to="/categorie">
             Categorie
-          </NavLink>
-          <NavLink to="/adotta">
-            Adotta
-          </NavLink>
-          <NavLink to="/chi-siamo">
-            Chi siamo
           </NavLink>
           <NavLink to="/contattaci">
             Contattaci
