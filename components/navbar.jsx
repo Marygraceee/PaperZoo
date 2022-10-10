@@ -88,7 +88,11 @@ export default function Navbar() {
 
       <div className="w-full h-full hidden lg:flex justify-center items-center">
         <input
-          onKeyDown={(e) => { e.key === "Enter" ? client.products.list().then((product) => console.log(product)) : console.log("no"); }}
+          onKeyDown={(e) => {
+            e.key === "Enter" ? client.products.list({
+              query: e.target.value,
+            }).then((response) => console.log(response.data)) : console.log("no");
+          }}
           className="border-2 border-gray-500 w-6/12 rounded-full px-5 py-1"
           type="text"
           placeholder="Cerca"
