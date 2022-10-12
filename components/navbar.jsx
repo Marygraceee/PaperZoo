@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable quotes */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/prop-types */
@@ -54,6 +55,7 @@ function MobileNav({ open, setOpen }) {
 }
 
 export default function Navbar() {
+  const [searchProduct, setSearchProdut] = useState(null);
   const [open, setOpen] = useState(false);
   const [trasparente, setTrasparente] = useState(false);
   const [clientWindowHeight, setClientWindowHeight] = useState("");
@@ -86,19 +88,53 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <div className="w-full h-full hidden lg:flex justify-center items-center">
+      <div className="w-full h-full hidden lg:flex justify-center items-center flex-col">
         <input
-          onKeyDown={(e) => {
-            e.key === "Enter" ? client.products.list({
-              query: e.target.value,
-            }).then((response) => console.log(response.data)) : console.log("no");
+          onChange={(e) => {
+            if (e.target.value.length === 0) {
+              setSearchProdut(null);
+            } else {
+              client.products.list({
+                query: e.target.value,
+              }).then((response) => setSearchProdut(response.data));
+            }
           }}
-          className="border-2 border-gray-500 w-6/12 rounded-full px-5 py-1"
-          type="text"
+          onKeyDown={(e) => {
+            if (e.target.value !== "") {
+              e.key === "Enter" ? client.products.list({
+                query: e.target.value,
+              }).then((response) => setSearchProdut(response.data)) : console.log("no");
+            } else {
+              setSearchProdut(null);
+            }
+          }}
+          className="border-gray-500 focus:border-black outline-none border-2 w-6/12 rounded-full px-5 py-1"
+          type="search"
           placeholder="Cerca"
           name="cerca"
           id="cerca"
         />
+        <span className={`bg-white text-black shadow-xl w-6/12 max-h-96 overflow-scroll rounded-lg p-2 gap-5 fixed top-20 ${searchProduct ? "flex flex-col" : "hidden"}`}>
+          {searchProduct && searchProduct.map((product) => (
+            <div className="flex bg-white text-black lg:flex-row flex-col gap-5 transition duration-300 ease-in-out">
+              <div className=" transition duration-300 ease-in-out flex justify-center items-center shadow-lg overflow-hidden bg-red rounded-t-xl">
+                <a href={`/prodotti/${product.permalink}`}>
+                  <img className="rounded-2xl shadow-xl" style={{ maxWidth: '5rem', objectFit: 'cover', aspectRatio: '1/1' }} src={product.image.url} alt="" />
+                </a>
+              </div>
+
+              <div
+                className=" w-full flex flex-1 flex-col text-left transition items-center justify-center"
+              >
+                <a className="lg:text-xl text-lg w-full hover:text-orange-400 transition duration-300 ease-in-out" href={`/prodotti/${product.permalink}`}>{product.name}</a>
+
+                <div className="flex w-full justify-center items-center">
+                  <p className="lg:text-2xl text-lg w-full text-orange-400">{product.price.formatted_with_symbol}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </span>
       </div>
 
       <div className=" flex justify-end items-center  h-full">
