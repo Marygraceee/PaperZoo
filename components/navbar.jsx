@@ -6,12 +6,12 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import Link from 'next/link';
-import { BsCart } from "react-icons/bs";
 import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 import CartButton from './CartButton';
 import Logo from "../public/paperzoo.png";
 import client from '../lib/commerce';
+import ProductList from './ProductList';
 
 function NavLink({ to, children }) {
   return (
@@ -78,7 +78,7 @@ export default function Navbar() {
   return (
     <nav id="Fredoka" className={`flex filter drop-shadow-lg bg-white ${trasparente ? ' bg-opacity-70' : 'bg-opacity-100'} backdrop-blur-sm hover:bg-opacity-100 transition duration-500 ease-in-out h-20 items-center justify-between sticky top-0 w-full z-50 px-4 lg:px-20`}>
       <MobileNav open={open} setOpen={setOpen} />
-      <div className="flex items-center w-1/3 md:w-1/5 lg:w-1/12 scale-110 hover:scale-125 cursor-pointer transition duration-300 object-cover ">
+      <div className="flex items-center w-1/3 md:w-1/5 lg:w-1/12 scale-110 hover:scale-125 cursor-pointer transition duration-300 object-cover">
         <Link href="/">
           <Image
             className=""
@@ -88,32 +88,28 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <div className="w-full h-full hidden lg:flex justify-center items-center flex-col">
-        <input
-          onChange={(e) => {
-            if (e.target.value.length === 0) {
-              setSearchProdut(null);
-            } else {
-              client.products.list({
-                query: e.target.value,
-              }).then((response) => setSearchProdut(response.data));
-            }
-          }}
-          onKeyDown={(e) => {
-            if (e.target.value !== "") {
-              e.key === "Enter" ? client.products.list({
-                query: e.target.value,
-              }).then((response) => setSearchProdut(response.data)) : console.log("no");
-            } else {
-              setSearchProdut(null);
-            }
-          }}
-          className="border-gray-500 focus:border-black outline-none border-2 w-6/12 rounded-full px-5 py-1"
-          type="search"
-          placeholder="Cerca"
-          name="cerca"
-          id="cerca"
-        />
+      <div id="barraRicercaDesktop" className="w-full h-full hidden lg:flex justify-center items-center flex-col">
+        <form className="w-full flex justify-center" action="/prodotticercati" method="get">
+          <input
+            onChange={(e) => {
+              if (e.target.value.length === 0) {
+                setSearchProdut(null);
+              } else {
+                client.products.list({
+                  query: e.target.value,
+                }).then((response) => setSearchProdut(response.data));
+              }
+            }}
+            className="border-gray-500 focus:border-black outline-none border-2 w-6/12 rounded-full px-5 py-1"
+            type="search"
+            placeholder="Cerca"
+            name="q"
+            id="cerca"
+            inputMode="search"
+            required
+          />
+        </form>
+
         <span className={`bg-white text-black shadow-xl w-6/12 max-h-96 overflow-scroll rounded-lg p-2 gap-5 fixed top-20 ${searchProduct ? "flex flex-col" : "hidden"}`}>
           {searchProduct && searchProduct.map((product) => (
             <div className="flex bg-white text-black lg:flex-row flex-col gap-5 transition duration-300 ease-in-out">

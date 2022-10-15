@@ -9,7 +9,7 @@ export default function Product({ product }) {
   return (
     <div className="flex bg-white text-black lg:flex-row flex-col p-5 gap-5 hover:scale-105 transition duration-300 ease-in-out">
 
-      <div className="hover:scale-105 transition duration-300 ease-in-out flex justify-center items-center shadow-lg overflow-hidden bg-white rounded-t-xl">
+      <div className="hover:scale-105 transition duration-300 ease-in-out h-fit my-auto flex justify-center items-center">
         <a href={`/prodotti/${product.permalink}`}>
           <img className="rounded-2xl shadow-xl" style={{ maxWidth: '8rem', objectFit: 'cover', aspectRatio: '1/1' }} src={product.image.url} alt="" />
         </a>
