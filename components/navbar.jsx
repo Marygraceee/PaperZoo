@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable quotes */
 /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -76,7 +77,7 @@ export default function Navbar() {
   });
 
   return (
-    <nav id="Fredoka" className={`flex filter drop-shadow-lg bg-white ${trasparente ? ' bg-opacity-70' : 'bg-opacity-100'} backdrop-blur-sm hover:bg-opacity-100 transition duration-500 ease-in-out h-20 items-center justify-between sticky top-0 w-full z-50 px-4 lg:px-20`}>
+    <nav id="Fredoka" className={`lg:flex filter drop-shadow-lg bg-white ${trasparente ? ' bg-opacity-70' : 'bg-opacity-100'} backdrop-blur-sm hidden hover:bg-opacity-100 transition duration-500 ease-in-out h-20 items-center justify-between sticky top-0 w-full z-50 px-4 lg:px-20`}>
       <MobileNav open={open} setOpen={setOpen} />
       <div className="flex items-center w-1/3 md:w-1/5 lg:w-1/12 scale-110 hover:scale-125 cursor-pointer transition duration-300 object-cover">
         <Link href="/">
@@ -88,26 +89,36 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <div id="barraRicercaDesktop" className="w-full h-full hidden lg:flex justify-center items-center flex-col">
-        <form className="w-full flex justify-center" action="/prodotticercati" method="get">
-          <input
-            onChange={(e) => {
-              if (e.target.value.length === 0) {
-                setSearchProdut(null);
-              } else {
-                client.products.list({
-                  query: e.target.value,
-                }).then((response) => setSearchProdut(response.data));
-              }
-            }}
-            className="border-gray-500 focus:border-black outline-none border-2 w-6/12 rounded-full px-5 py-1"
-            type="search"
-            placeholder="Cerca"
-            name="q"
-            id="cerca"
-            inputMode="search"
-            required
-          />
+      <div id="barraRicercaDesktop" className="w-full h-full hidden lg:flex justify-center items-center flex-col ">
+        <form className="flex items-center w-1/2" action="/prodotticercati" method="get">
+          <label htmlFor="q" className="sr-only">Search</label>
+          <div className="relative w-full">
+            <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+              <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" /></svg>
+            </div>
+            <input
+              onChange={(e) => {
+                if (e.target.value.length === 0) {
+                  setSearchProdut(null);
+                } else {
+                  client.products.list({
+                    query: e.target.value,
+                  }).then((response) => setSearchProdut(response.data));
+                }
+              }}
+              className="bg-gray-50 border-2 border-gray-300 text-gray-900 text-lg rounded-full focus:ring-orange-500 focus:border-orange-500 outline-none block w-full pl-10 p-2.5  "
+              type="search"
+              placeholder="Cerca"
+              name="q"
+              id="q"
+              inputMode="search"
+              required
+            />
+          </div>
+          <button type="submit" className="p-2.5 ml-2 text-sm font-medium text-white bg-orange-500 rounded-full border border-orange-500 hover:bg-orange-400 focus:ring-2 focus:outline-none focus:ring-orange-300 dark:focus:ring-orange-400">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+            <span className="sr-only">Search</span>
+          </button>
         </form>
 
         <span className={`bg-white text-black shadow-xl w-6/12 max-h-96 overflow-scroll rounded-lg p-2 gap-5 fixed top-20 ${searchProduct ? "flex flex-col" : "hidden"}`}>

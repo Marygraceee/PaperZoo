@@ -10,6 +10,12 @@
   },
   "dependencies": {
     "@chec/commerce.js": "^2.8.0",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@fontsource/roboto": "^4.5.8",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@mui/material": "^5.10.12",
     "dompurify": "^2.3.10",
     "isomorphic-dompurify": "^0.20.0",
     "next": "12.2.4",

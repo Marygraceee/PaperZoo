@@ -3,6 +3,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/react-in-jsx-scope */
+import { BottomNavigation } from '@material-ui/core';
+import SimpleBottomNavigation from '../components/BottomNavigation';
 import Navbar from '../components/navbar';
 import '../styles/globals.css';
 
@@ -12,6 +14,7 @@ function MyApp({ Component, pageProps }) {
       <Navbar />
 
       <Component {...pageProps} />
+      <SimpleBottomNavigation />
     </>
   );
 }

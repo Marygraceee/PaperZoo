@@ -7,7 +7,7 @@ export default function getRoute() {
   // Calling useRouter() hook
   const router = useRouter();
   const [prodottiCercati, setProdotti] = useState(null);
-  
+
   client.products.list({
     query: router.query.q,
   }).then((response) => setProdotti(response.data));
