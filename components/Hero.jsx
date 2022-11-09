@@ -1,9 +1,11 @@
 import React from 'react';
+import bg from '../public/heroimage.jpg'
 
 function Hero() {
   return (
     <section
-      className="relative bg-[url(../public/heroimage.jpg)] bg-cover bg-center bg-no-repeat shadow-xl"
+      style={{ backgroundImage: `url(${bg.src})` }}
+      className="relative bg-cover bg-center bg-no-repeat shadow-xl"
     >
       <div
         className="absolute inset-0 bg-white/60 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/25"
