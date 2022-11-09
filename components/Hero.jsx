@@ -1,5 +1,5 @@
 import React from 'react';
-import bg from '../public/heroimage.jpg'
+import bg from '../public/heroimage.jpg';
 
 function Hero() {
   return (

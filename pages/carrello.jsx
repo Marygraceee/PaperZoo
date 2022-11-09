@@ -11,7 +11,7 @@ function Carrello() {
     return <CarrelloVuoto />;
   }
   return (
-    <div className="flex flex-col justify-center items-center gap-10 p-5">
+    <div className="flex flex-col justify-center items-center gap-10 p-5 min-h-screen">
       <section>
         <h1 className="mx-auto lg:text-3xl md:text-2xl text-xl font-extrabold lg:leading-snug">
           Hai
