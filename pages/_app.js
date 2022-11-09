@@ -5,6 +5,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { BottomNavigation } from '@material-ui/core';
 import SimpleBottomNavigation from '../components/BottomNavigation';
+import Footer from '../components/Footer';
 import Navbar from '../components/navbar';
 import '../styles/globals.css';
 
@@ -14,6 +15,7 @@ function MyApp({ Component, pageProps }) {
       <Navbar />
 
       <Component {...pageProps} />
+      <Footer />
       <SimpleBottomNavigation />
     </>
   );
