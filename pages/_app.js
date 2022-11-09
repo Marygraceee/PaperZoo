@@ -6,12 +6,14 @@
 import SimpleBottomNavigation from '../components/BottomNavigation';
 import Footer from '../components/Footer';
 import Navbar from '../components/navbar';
+import SearchBarMobile from '../components/SearchBarMobile';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <Navbar />
+      <SearchBarMobile />
 
       <Component {...pageProps} />
       <Footer />
