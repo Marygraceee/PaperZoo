@@ -9,28 +9,23 @@ function Form() {
         <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
           <div className="lg:col-span-2 lg:py-12">
             <p className="max-w-xl text-lg">
-              At the same time, the fact that we are wholly owned and totally
-              independent from manufacturer and other group control gives you
-              confidence that we will only recommend what is right for you.
+              Per qualsiasi informazione, richiesta o chiarimento puoi contattarci via mail o utilizzare l'apposito form a fianco!
             </p>
 
             <div className="mt-8">
-              <a href="" className="text-2xl font-bold text-pink-600">
-                0151 475 4450
-              </a>
-
-              <address className="mt-2 not-italic">
-                282 Kevin Brook, Imogeneborough, CA 58517
-              </address>
+              <p className="text-2xl font-bold text-orange-400">
+                +39 1234567890
+                PaperZoo@sitoprova.it
+              </p>
             </div>
           </div>
 
           <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
-            <form action="" className="space-y-4">
+            <form action="" className="space-y-4  border-gray-300 focus:ring-orange-500 focus:border-orange-500">
               <div>
-                <label className="sr-only" htmlFor="name">Name</label>
+                <label className="sr-only" htmlFor="name">Nome</label>
                 <input
-                  className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                  className="w-full rounded-lg  border-gray-300 focus:ring-orange-500 focus:border-orange-500 border-2 outline-none p-3 text-sm "
                   placeholder="Name"
                   type="text"
                   id="name"
@@ -41,7 +36,7 @@ function Form() {
                 <div>
                   <label className="sr-only" htmlFor="email">Email</label>
                   <input
-                    className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                    className="w-full rounded-lg  border-gray-300 focus:ring-orange-500 focus:border-orange-500 border-2 outline-none p-3 text-sm"
                     placeholder="Email address"
                     type="email"
                     id="email"
@@ -49,32 +44,32 @@ function Form() {
                 </div>
 
                 <div>
-                  <label className="sr-only" htmlFor="phone">Phone</label>
+                  <label className="sr-only" htmlFor="phone">Telefono</label>
                   <input
-                    className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                    className="w-full rounded-lg  border-gray-300 focus:ring-orange-500 focus:border-orange-500 border-2 outline-none p-3 text-sm"
                     placeholder="Phone Number"
                     type="tel"
                     id="phone"
                   />
                 </div>
               </div>
-              
+
               <div>
-                <label className="sr-only" htmlFor="message">Message</label>
+                <label className="sr-only" htmlFor="message">Il tuo messaggio</label>
                 <textarea
-                  className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                  className="w-full rounded-lg  border-gray-300 focus:ring-orange-500 focus:border-orange-500 border-2 outline-none p-3 text-sm"
                   placeholder="Message"
                   rows="8"
                   id="message"
                 />
               </div>
 
-              <div className="mt-4">
+              <div className="mt-8 flex flex-wrap gap-4 text-center">
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-black px-5 py-3 text-white sm:w-auto"
+                  className="block w-full rounded bg-orange-400 px-12 py-3 text-sm font-medium text-white shadow hover:bg-orange-300 focus:outline-none focus:ring active:bg-orange-400 sm:w-auto"
                 >
-                  <span className="font-medium"> Send Enquiry </span>
+                  <span className="font-medium"> Invia </span>
 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
