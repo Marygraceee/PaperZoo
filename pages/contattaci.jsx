@@ -1,7 +1,8 @@
 import React from 'react';
+import Form from '../components/Form';
 
 const contattaci = () => (
-  <div>contattaci</div>
+  <Form />
 );
 
 export default contattaci;
