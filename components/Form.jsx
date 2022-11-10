@@ -9,7 +9,7 @@ function Form() {
         <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
           <div className="lg:col-span-2 lg:py-12">
             <p className="max-w-xl text-lg">
-              Per qualsiasi informazione, richiesta o chiarimento puoi contattarci via mail o utilizzare l'apposito form a fianco!
+              Per qualsiasi informazione, richiesta o chiarimento puoi contattarci via mail o utilizzare l'apposito form presente nella pagina!
             </p>
 
             <div className="mt-8">
@@ -67,7 +67,7 @@ function Form() {
               <div className="mt-8 flex flex-wrap gap-4 text-center">
                 <button
                   type="submit"
-                  className="block w-full rounded bg-orange-400 px-12 py-3 text-sm font-medium text-white shadow hover:bg-orange-300 focus:outline-none focus:ring active:bg-orange-400 sm:w-auto"
+                  className="w-full rounded flex justify-center items-center bg-orange-400 px-12 py-3 text-sm font-medium text-white shadow hover:bg-orange-300 focus:outline-none focus:ring active:bg-orange-400 sm:w-auto"
                 >
                   <span className="font-medium"> Invia </span>
 
