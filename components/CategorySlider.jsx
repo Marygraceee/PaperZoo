@@ -13,7 +13,7 @@ const Example = ({ categories }) => {
  const indicators = (index) => (<div className="indicator" />);
 
     return (
-        <div className=" w-full z-10 flex flex-col lg:gap-10 gap-5">
+        <div className=" w-full z-10 flex flex-col lg:gap-10 gap-5 p-5">
           <h1 className="text-center text-lg lg:text-2xl font-extrabold">Sfoglia le categorie!</h1>
           <Slide indicators={indicators} transitionDuration={500} easing="ease-out">
             {categories.map((category) => (
