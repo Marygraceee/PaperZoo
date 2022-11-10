@@ -13,7 +13,7 @@ const Example = ({ product }) => {
  const indicators = (index) => (<div className="indicator" />);
 
     return (
-        <div className=" w-full -z-40">
+        <div className=" w-full z-10">
           <Slide indicators={indicators} transitionDuration={500} easing="ease-out">
 
             {product.related_products.map((product) => (

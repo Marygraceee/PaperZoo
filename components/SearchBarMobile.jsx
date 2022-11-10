@@ -5,7 +5,7 @@ function SearchBarMobile() {
   const [searchProduct, setSearchProdut] = useState(null);
 
   return (
-    <div id="barraRicercaMobile" className="w-full h-full lg:hidden flex sticky top-0 bg-orange-400 justify-center items-center flex-col ">
+    <div id="barraRicercaMobile" className="w-full h-full lg:hidden flex sticky top-0 bg-orange-400 z-50 justify-center items-center flex-col ">
       <form className="flex items-center w-full p-2 shadow-xl" action="/prodotticercati" method="get">
         <label htmlFor="q" className="sr-only">Search</label>
         <div className="relative w-full">
@@ -37,7 +37,7 @@ function SearchBarMobile() {
         </button>
       </form>
 
-      <span className={`bg-white text-black sticky top-0 left-0 z-50 h-screen w-screen gap-5 overflow-scroll ${searchProduct ? 'flex flex-col' : 'hidden'}`}>
+      <span className={`bg-white text-black sticky top-0 left-0 h-screen w-screen gap-5 overflow-scroll ${searchProduct ? 'flex flex-col' : 'hidden'}`}>
         {searchProduct && searchProduct.map((product) => (
           <div className="flex justify-start items-center p-5 h-1/6 gap-5">
             <div className="">
