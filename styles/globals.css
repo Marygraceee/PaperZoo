@@ -10,9 +10,6 @@ body {
 
 }
 
-html{
-  min-height: 99vh;
-}
 
 a {
   color: inherit;
@@ -24,6 +21,9 @@ a {
   scroll-behavior: smooth;
 }
 
+#__next{
+  height: 100%;
+}
 
 #Fredoka{
   font-family: 'Fredoka One', cursive;

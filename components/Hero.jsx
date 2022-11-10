@@ -5,7 +5,7 @@ function Hero() {
   return (
     <section
       style={{ backgroundImage: `url(${bg.src})` }}
-      className="relative bg-cover bg-center bg-no-repeat shadow-xl z-10"
+      className="relative bg-cover bg-center bg-no-repeat shadow-xl z-10 min-h-screen"
     >
       <div
         className="absolute inset-0 bg-white/60 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/25"

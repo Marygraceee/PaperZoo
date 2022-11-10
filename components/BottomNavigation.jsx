@@ -7,7 +7,7 @@ import { BsCart } from 'react-icons/bs';
 function BottomNavigation() {
   return (
 
-    <section id="bottom-navigation" className="lg:hidden sticky w-full bottom-0 translate-y-0 translate-x-0 z-40 bg-orange-400 text-white">
+    <section id="bottom-navigation" className="lg:hidden sticky w-full bottom-0 z-40 bg-orange-400 text-white">
       <div className=" sticky bottom-0">
         <div id="tabs" className="flex justify-between p-2">
           <a href="/" className="w-full focus:text-orange-300 hover:text-orange-300 flex flex-col justify-center items-center text-center gap-1 text-lg">
