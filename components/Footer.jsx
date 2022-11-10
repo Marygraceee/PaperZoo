@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="p-2 mt-5 lg:text-sm text-xs bg-gray-700 shadow flex justify-between items-center">
+    <footer className="p-2 mt-5 lg:text-sm text-xs bg-gray-700 shadow flex justify-between items-center relative bottom-0">
       <span className=" text-white flex flex-col lg:flex-row gap-2">
         © 2022
         <a href="/" className="hover:underline">Paperzoo</a>

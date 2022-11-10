@@ -46,7 +46,7 @@ export default function ProductPage({ product }) {
   const addToCart = (e) => client.cart.add(product.id, 1).then(e.target.textContent = "Aggiunto al carrello!").then(e.target.classList.add("bg-green-700", "border-0", "pointer-events-none", "hover:bg-green-600", "hover:text-white")).then(setDisabler(true));
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-10"> 
 
       <div className="flex flex-col lg:h-screen lg:flex-row shadow-xl">
         <div className="lg:w-1/2 flex justify-center items-center bg-orange-400 hover:bg-orange-300 transition overflow-hidden p-5">
@@ -90,14 +90,12 @@ export default function ProductPage({ product }) {
               ))}
             </ul>
           </div>
-          <div className="flex flex-row lg:justify-start justify-center items-center gap-5 w-full">
+          <div className="flex lg:flex-row flex-col lg:justify-start justify-center items-center gap-5 w-full">
             <p className="lg:text-xl text-lg">{product.price.formatted_with_symbol}</p>
             <button
               disabled={disabler}
               onClick={addToCart}
-              className="pointer-events-auto lg:text-xl md:text-lg text-base bg-orange-400 text-white
-           hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 lg:p-5 p-3 rounded-full font-extrabold
-           flex flex-row items-center justify-center gap-2 lg:gap-5"
+              className="gap-5 rounded flex justify-center items-center bg-orange-400 px-12 py-3 text-sm font-medium text-white shadow hover:bg-orange-300 focus:outline-none focus:ring active:bg-orange-400 sm:w-aut"
             >
               <AiOutlineShoppingCart />
               Aggiungi al carrello
