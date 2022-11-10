@@ -18,7 +18,7 @@ function BottomNavigation() {
             <BiCategory />
             <span className="tab tab-kategori block text-xs">Categorie</span>
           </a>
-          <a href="/contatti" className="w-full focus:text-orange-300 hover:text-orange-300 flex flex-col justify-center items-center text-center gap-1 text-lg">
+          <a href="/contattaci" className="w-full focus:text-orange-300 hover:text-orange-300 flex flex-col justify-center items-center text-center gap-1 text-lg">
             <MdOutlineContactSupport />
             <span className="tab tab-explore block text-xs">Contatti</span>
           </a>

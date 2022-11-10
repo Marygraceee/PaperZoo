@@ -14,10 +14,10 @@ function MyApp({ Component, pageProps }) {
     <>
       <Navbar />
       <SearchBarMobile />
-
+      <SimpleBottomNavigation />
       <Component {...pageProps} />
       <Footer />
-      <SimpleBottomNavigation />
+      
     </>
   );
 }
