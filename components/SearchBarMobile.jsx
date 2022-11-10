@@ -6,7 +6,7 @@ function SearchBarMobile() {
 
   return (
     <div id="barraRicercaMobile" className="w-full h-full lg:hidden flex sticky top-0 bg-orange-400 z-50 justify-center items-center flex-col ">
-      <form className="flex items-center w-full p-2 shadow-xl" action="/prodotticercati" method="get">
+      <form className="flex items-center w-full p-2" action="/prodotticercati" method="get">
         <label htmlFor="q" className="sr-only">Search</label>
         <div className="relative w-full">
           <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
