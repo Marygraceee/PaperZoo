@@ -1,10 +1,12 @@
 import React from 'react';
+import Breadcrumbs from './Breadcrumbs';
 
 require('@tailwindcss/forms');
 
 function Form() {
   return (
     <section className="bg-gray-100 min-h-screen">
+      <Breadcrumbs />
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
           <div className="lg:col-span-2 lg:py-12">
@@ -26,7 +28,7 @@ function Form() {
                 <label className="sr-only" htmlFor="name">Nome</label>
                 <input
                   className="w-full rounded-lg  border-gray-300 focus:ring-orange-500 focus:border-orange-500 border-2 outline-none p-3 text-sm "
-                  placeholder="Name"
+                  placeholder="Nome"
                   type="text"
                   id="name"
                 />
@@ -37,7 +39,7 @@ function Form() {
                   <label className="sr-only" htmlFor="email">Email</label>
                   <input
                     className="w-full rounded-lg  border-gray-300 focus:ring-orange-500 focus:border-orange-500 border-2 outline-none p-3 text-sm"
-                    placeholder="Email address"
+                    placeholder="Indirizzo email"
                     type="email"
                     id="email"
                   />
@@ -47,7 +49,7 @@ function Form() {
                   <label className="sr-only" htmlFor="phone">Telefono</label>
                   <input
                     className="w-full rounded-lg  border-gray-300 focus:ring-orange-500 focus:border-orange-500 border-2 outline-none p-3 text-sm"
-                    placeholder="Phone Number"
+                    placeholder="Numero di telefono"
                     type="tel"
                     id="phone"
                   />
@@ -58,7 +60,7 @@ function Form() {
                 <label className="sr-only" htmlFor="message">Il tuo messaggio</label>
                 <textarea
                   className="w-full rounded-lg  border-gray-300 focus:ring-orange-500 focus:border-orange-500 border-2 outline-none p-3 text-sm"
-                  placeholder="Message"
+                  placeholder="Messaggio"
                   rows="8"
                   id="message"
                 />

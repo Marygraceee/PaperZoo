@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import client from '../../lib/commerce';
 import ProdottiCorrelati from "../../components/ProdottiCorrelati";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export async function getStaticProps({ params }) {
   const { permalink } = params;

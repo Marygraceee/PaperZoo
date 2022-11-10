@@ -12,6 +12,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import client from '../../../lib/commerce';
 import ProductList from '../../../components/ProductList';
+import Breadcrumbs from '../../../components/Breadcrumbs';
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
@@ -86,6 +87,7 @@ export default function CategoryPage({ category, products }) {
         </h1>
 
       </div>
+      <Breadcrumbs />
 
       <div className="flex flex-col justify-center items-center gap-10">
 
