@@ -14,7 +14,7 @@ import '../styles/globals.css';
 function MyApp({ Component, pageProps }) {
   return (
 
-    <ChakraProvider>
+    <>
       <Head>
         <title>PaperZoo</title>
       </Head>
@@ -22,9 +22,11 @@ function MyApp({ Component, pageProps }) {
       <Navbar />
       <SearchBarMobile />
       <SimpleBottomNavigation />
-      <Component {...pageProps} />
+      <ChakraProvider>
+        <Component {...pageProps} />
+      </ChakraProvider>
       <Footer />
-    </ChakraProvider>
+    </>
 
   );
 }
