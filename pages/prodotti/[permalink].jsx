@@ -3,7 +3,7 @@
 /* eslint-disable quotes */
 /* eslint-disable prefer-destructuring */
 /* eslint-disable react/prop-types */
-import { useToast } from '@chakra-ui/react';
+
 import React, { useState } from 'react';
 import DOMPurify from 'isomorphic-dompurify';
 import { AiOutlineShoppingCart } from "react-icons/ai";
@@ -39,21 +39,13 @@ export async function getStaticPaths() {
 }
 
 export default function ProductPage({ product }) {
-  const toast = useToast();
   const [disabler, setDisabler] = useState(false);
   const description = product.description;
 
   const addToCart = (e) => client.cart.add(product.id, 1)
     .then(e.target.textContent = "Aggiunto al carrello!")
     .then(e.target.classList.add("bg-green-700", "border-0", "pointer-events-none", "hover:bg-green-600", "hover:text-white"))
-    .then(setDisabler(true))
-    .then(toast({
-      title: 'Aggiunto al carrello!',
-      description: "Il prodotto è stato aggiunto al carrello",
-      status: 'success',
-      duration: 9000,
-      isClosable: true,
-    }));
+    .then(setDisabler(true));
 
   return (
     <div className="flex flex-col gap-10">

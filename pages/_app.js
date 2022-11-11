@@ -3,7 +3,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/react-in-jsx-scope */
-import { ChakraProvider } from '@chakra-ui/react';
 import Head from 'next/head';
 import SimpleBottomNavigation from '../components/BottomNavigation';
 import Footer from '../components/Footer';
@@ -22,9 +21,9 @@ function MyApp({ Component, pageProps }) {
       <Navbar />
       <SearchBarMobile />
       <SimpleBottomNavigation />
-      
-        <Component {...pageProps} />
-      
+
+      <Component {...pageProps} />
+
       <Footer />
     </>
 
