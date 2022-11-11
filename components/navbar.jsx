@@ -48,7 +48,7 @@ export default function Navbar() {
 
   return (
     <nav id="Fredoka" className={`lg:flex filter drop-shadow-lg bg-white ${trasparente ? ' bg-opacity-70' : 'bg-opacity-100'} backdrop-blur-sm hidden hover:bg-opacity-100 transition duration-500 ease-in-out h-20 items-center justify-between sticky top-0 w-full z-50 px-4 lg:px-20`}>
-      
+
       <div className="flex items-center w-1/3 md:w-1/5 lg:w-1/12 scale-110 hover:scale-125 cursor-pointer transition duration-300 object-cover">
         <Link href="/">
           <Image
@@ -170,8 +170,6 @@ export default function Navbar() {
       </div>
 
       <div className=" flex justify-end items-center  h-full">
-
-   
 
         <div className="hidden lg:flex lg:text-xl gap-5 h-full">
           <NavLink to="/categorie">
