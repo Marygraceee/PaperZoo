@@ -12,10 +12,6 @@ import Image from "next/image";
 import CartButton from './CartButton';
 import Logo from "../public/paperzoo.png";
 import client from '../lib/commerce';
-<<<<<<< HEAD
-=======
-import ProductList from './ProductList';
->>>>>>> parent of e377767 (alcune modifiche a bottoni)
 
 function NavLink({ to, children }) {
   return (

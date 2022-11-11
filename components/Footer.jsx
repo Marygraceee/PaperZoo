@@ -2,11 +2,7 @@ import React from 'react';
 
 function Footer() {
   return (
-<<<<<<< HEAD
     <footer className="p-2 lg:text-sm text-xs bg-gray-700 shadow flex justify-between items-center relative bottom-0">
-=======
-    <footer className="p-2 mt-5 lg:text-sm text-xs bg-gray-700 shadow flex justify-between items-center">
->>>>>>> parent of e377767 (alcune modifiche a bottoni)
       <span className=" text-white flex flex-col lg:flex-row gap-2">
         © 2022
         <a href="/" className="hover:underline">Paperzoo</a>
