@@ -39,11 +39,7 @@ function Carrello() {
               <div className="flex lg:flex-row flex-col justify-center items-center gap-5 p-10">
                 <div className="flex justify-center items-center gap-5">
                   <button
-<<<<<<< HEAD
                     className="bg-orange-400 active:bg-orange-400 hover:bg-orange-300 px-5 pb-1 font-extrabold rounded-full text-xl text-white"
-=======
-                    className="bg-orange-400 active:bg-orange-400 hover:bg-orange-300 px-5 rounded-full text-xl"
->>>>>>> parent of e377767 (alcune modifiche a bottoni)
                     type="button"
                     onClick={() => {
                       client.cart.update(item.id, { quantity: item.quantity - 1 }).then((response) => setCart(response));
@@ -56,11 +52,7 @@ function Carrello() {
                     {` ${item.quantity}`}
                   </p>
                   <button
-<<<<<<< HEAD
                     className="bg-orange-400 active:bg-orange-400 hover:bg-orange-300 px-5 pb-1 font-extrabold rounded-full text-xl text-white"
-=======
-                    className="bg-orange-400 active:bg-orange-400 hover:bg-orange-300 px-5 rounded-full text-xl"
->>>>>>> parent of e377767 (alcune modifiche a bottoni)
                     type="button"
                     onClick={() => {
                       client.cart.update(item.id, { quantity: item.quantity + 1 }).then((response) => setCart(response));
