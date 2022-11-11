@@ -22,9 +22,9 @@ function MyApp({ Component, pageProps }) {
       <Navbar />
       <SearchBarMobile />
       <SimpleBottomNavigation />
-      <ChakraProvider>
+      
         <Component {...pageProps} />
-      </ChakraProvider>
+      
       <Footer />
     </>
 
