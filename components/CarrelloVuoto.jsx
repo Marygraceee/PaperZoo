@@ -1,8 +1,8 @@
 import React from 'react';
 
-function CarrelloVuoto() {
+export function CarrelloVuoto() {
   return (
-    <div className="flex flex-col justify-start items-center h-screen p-10 ">
+    <div className="flex flex-col justify-center items-center h-screen ">
       <h1>Caricando il carrello</h1>
       <svg
         role="status"
@@ -23,5 +23,3 @@ function CarrelloVuoto() {
     </div>
   );
 }
-
-export default CarrelloVuoto;
