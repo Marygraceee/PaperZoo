@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function CarrelloVuoto() {
+function CarrelloVuoto() {
   return (
     <div className="flex flex-col justify-start p-10 items-center h-screen ">
       <h1>Caricando il carrello</h1>
@@ -23,3 +23,5 @@ export function CarrelloVuoto() {
     </div>
   );
 }
+
+export default CarrelloVuoto;

@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React, { useState } from 'react';
 import client from '../lib/commerce';
-import { CarrelloVuoto } from '../components/CarrelloVuoto';
+import CarrelloVuoto from '../components/CarrelloVuoto';
 import Breadcrumbs from '../components/Breadcrumbs';
 
 function Carrello() {
