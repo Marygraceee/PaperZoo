@@ -2,10 +2,18 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { useToast } from '@chakra-ui/react';
 import client from '../lib/commerce';
 
 export default function Product({ product }) {
-  const addToCart = (e) => client.cart.add(product.id, 1);
+  const toast = useToast();
+  const addToCart = (e) => client.cart.add(product.id, 1).then(toast({
+    title: 'Aggiunto al carrello!',
+    description: 'Il prodotto è stato aggiunto al carrello',
+    status: 'success',
+    duration: 9000,
+    isClosable: true,
+  }));
   return (
     <div className="flex bg-white text-black lg:flex-row flex-col p-5 gap-5 hover:scale-105 transition duration-300 ease-in-out">
 

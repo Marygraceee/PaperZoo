@@ -13,7 +13,6 @@ import CartButton from './CartButton';
 import Logo from "../public/paperzoo.png";
 import client from '../lib/commerce';
 
-
 function NavLink({ to, children }) {
   return (
     <a

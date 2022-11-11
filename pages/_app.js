@@ -3,6 +3,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/react-in-jsx-scope */
+import { ChakraProvider } from '@chakra-ui/react';
 import Head from 'next/head';
 import SimpleBottomNavigation from '../components/BottomNavigation';
 import Footer from '../components/Footer';
@@ -12,7 +13,8 @@ import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+
+    <ChakraProvider>
       <Head>
         <title>PaperZoo</title>
         <meta
@@ -29,8 +31,8 @@ function MyApp({ Component, pageProps }) {
       <SimpleBottomNavigation />
       <Component {...pageProps} />
       <Footer />
+    </ChakraProvider>
 
-    </>
   );
 }
 

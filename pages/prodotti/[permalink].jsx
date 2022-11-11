@@ -3,13 +3,12 @@
 /* eslint-disable quotes */
 /* eslint-disable prefer-destructuring */
 /* eslint-disable react/prop-types */
+import { useToast } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import DOMPurify from 'isomorphic-dompurify';
-import Link from 'next/link';
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import client from '../../lib/commerce';
 import ProdottiCorrelati from "../../components/ProdottiCorrelati";
-import Breadcrumbs from '../../components/Breadcrumbs';
 
 export async function getStaticProps({ params }) {
   const { permalink } = params;
@@ -40,13 +39,24 @@ export async function getStaticPaths() {
 }
 
 export default function ProductPage({ product }) {
+  const toast = useToast();
   const [disabler, setDisabler] = useState(false);
   const description = product.description;
 
-  const addToCart = (e) => client.cart.add(product.id, 1).then(e.target.textContent = "Aggiunto al carrello!").then(e.target.classList.add("bg-green-700", "border-0", "pointer-events-none", "hover:bg-green-600", "hover:text-white")).then(setDisabler(true));
+  const addToCart = (e) => client.cart.add(product.id, 1)
+    .then(e.target.textContent = "Aggiunto al carrello!")
+    .then(e.target.classList.add("bg-green-700", "border-0", "pointer-events-none", "hover:bg-green-600", "hover:text-white"))
+    .then(setDisabler(true))
+    .then(toast({
+      title: 'Aggiunto al carrello!',
+      description: "Il prodotto è stato aggiunto al carrello",
+      status: 'success',
+      duration: 9000,
+      isClosable: true,
+    }));
 
   return (
-    <div className="flex flex-col gap-10"> 
+    <div className="flex flex-col gap-10">
 
       <div className="flex flex-col lg:h-screen lg:flex-row shadow-xl">
         <div className="lg:w-1/2 flex justify-center items-center bg-orange-400 hover:bg-orange-300 transition overflow-hidden p-5">
@@ -78,13 +88,12 @@ export default function ProductPage({ product }) {
                   className=""
                   key={category.slug}
                 >
-                  <Link href={`/categorie/${category.slug}`}>
-                    <button className="
-                   bg-gray-100 cursor-pointer lg:p-5 p-3 rounded-full shadow-md hover:scale-105 text-gray-800 hover:text-orange-400 transition lg:text-xl md:text-lg text-base"
-                    >
-                      {category.name}
-                    </button>
-                  </Link>
+                  <a
+                    className="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-orange-400 before:transition hover:before:scale-x-100"
+                    href={`/categorie/${category.slug}`}
+                  >
+                    {category.name}
+                  </a>
                 </li>
 
               ))}
