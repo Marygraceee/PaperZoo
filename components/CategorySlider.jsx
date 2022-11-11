@@ -13,7 +13,7 @@ const Example = ({ categories }) => {
  const indicators = (index) => (<div className="indicator" />);
 
     return (
-        <div className=" w-full z-10">
+        <div className=" w-full z-10 p-5">
           <Slide indicators={indicators} transitionDuration={500} easing="ease-out">
             {categories.map((category) => (
             <div key={category.slug} className="flex flex-col items-center justify-center w-1/2 mx-auto container gap-5">
