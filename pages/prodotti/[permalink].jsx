@@ -46,7 +46,6 @@ export default function ProductPage({ product }) {
 
   const addToCart = (e) => client.cart.add(product.id, 1)
     .then(e.target.textContent = "Aggiunto al carrello!")
-    .then(e.target.classList.add("bg-green-700", "border-0", "pointer-events-none", "hover:bg-green-600", "hover:text-white"))
     .then(setDisabler(true))
     .then(toast({
       title: 'Aggiunto al carrello',
@@ -105,9 +104,9 @@ export default function ProductPage({ product }) {
             <button
               disabled={disabler}
               onClick={addToCart}
-              className="pointer-events-auto lg:text-xl md:text-lg text-base bg-orange-400 text-white
+              className={`${disabler ? "pointer-events-none bg-green-700 border-green-700" : "pointer-events-auto"} lg:text-xl md:text-lg text-base bg-orange-400 text-white
            hover:text-orange-400 hover:bg-transparent border-2 border-orange-400 transition duration-300 lg:p-5 p-3 rounded-full font-extrabold
-           flex flex-row items-center justify-center gap-2 lg:gap-5"
+           flex flex-row items-center justify-center gap-2 lg:gap-5`}
             >
               <AiOutlineShoppingCart />
               Aggiungi al carrello

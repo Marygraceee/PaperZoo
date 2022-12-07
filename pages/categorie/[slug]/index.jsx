@@ -127,9 +127,7 @@ export default function CategoryPage({ category, products }) {
           <div>
             <h1 className="lg:text-3xl md:text-2xl text-xl transition">Prodotti</h1>
           </div>
-          <div>
-            <ProductList products={products} />
-          </div>
+          <ProductList products={products} />
         </div>
 
       </div>

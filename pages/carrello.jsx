@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React, { useState } from 'react';
+import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import client from '../lib/commerce';
 import CarrelloVuoto from '../components/CarrelloVuoto';
 import Breadcrumbs from '../components/Breadcrumbs';
@@ -39,31 +40,31 @@ function Carrello() {
               <div className="flex lg:flex-row flex-col justify-center items-center gap-5 p-10">
                 <div className="flex justify-center items-center gap-5">
                   <button
-                    className="bg-orange-400 active:bg-orange-400 hover:bg-orange-300 px-5 rounded-full text-xl text-white"
+                    className="block text-center mx-auto aspect-square p-2 lg:hover:bg-transparent lg:hover:text-orange-400 rounded-full border border-orange-400 bg-orange-400 text-white"
                     type="button"
                     onClick={() => {
                       client.cart.update(item.id, { quantity: item.quantity - 1 }).then((response) => setCart(response));
                     }}
                   >
-                    -
+                    <AiOutlineMinus />
                   </button>
                   <p className="lg:text-xl text-lg">
                     Quantità:
                     {` ${item.quantity}`}
                   </p>
                   <button
-                    className="bg-orange-400 active:bg-orange-400 hover:bg-orange-300 px-5 rounded-full text-xl text-white"
+                    className="block text-center mx-auto aspect-square p-2 lg:hover:bg-transparent lg:hover:text-orange-400 rounded-full border border-orange-400 bg-orange-400 text-white"
                     type="button"
                     onClick={() => {
                       client.cart.update(item.id, { quantity: item.quantity + 1 }).then((response) => setCart(response));
                     }}
                   >
-                    +
+                    <AiOutlinePlus />
                   </button>
                 </div>
 
                 <button
-                  className=" bg-red-600 active:bg-red-600 hover:bg-red-500 text-white px-5 py-2 rounded-full text-xl"
+                  className=" inline-block rounded border border-red-500 bg-red-500 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-red-500"
                   type="button"
                   onClick={() => {
                     client.cart.remove(item.id).then((response) => setCart(response));
