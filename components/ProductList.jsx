@@ -9,7 +9,7 @@ export default function ProductList({ products }) {
   if (!products) return null;
 
   return (
-    <ul className="grid lg:grid-cols-3 grid-cols-1 lg:gap-12 gap-5 mx-auto">
+    <ul className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-12 gap-5">
       {products.map((product) => (
         <Product key={product.permalink} product={product} />
       ))}

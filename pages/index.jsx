@@ -6,6 +6,7 @@ import React from 'react';
 import client from '../lib/commerce';
 import CategorySlider from "../components/CategorySlider";
 import Hero from '../components/Hero';
+import banner from "../public/banner.webp"
 
 export async function getStaticProps() {
   const merchant = await client.merchants.about();
@@ -23,12 +24,19 @@ export async function getStaticProps() {
 
 export default function IndexPage({ merchant, categories, products }) {
   return (
-    <div className="flex flex-col w-full gap-10 min-h-screen">
-      <section>
+    <div className="flex flex-col w-full min-h-screen">
+      <section className="h-fit">
         <Hero />
       </section>
+      
+      <section className="h-fit">
+<img src={banner.src} alt="" />
+      </section>
 
-      <CategorySlider categories={categories} />
+<section className="h-fit p-10 flex justify-center items-center">
+<CategorySlider categories={categories} />
+</section>
+      
     </div>
   );
 }

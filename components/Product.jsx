@@ -18,11 +18,11 @@ export default function Product({ product }) {
     }));
   return (
 
-    <div className=" w-[30rem] max-w-lg rounded-lg shadow-md flex flex-col bg-white">
+    <div className="rounded-lg shadow-md flex flex-col bg-white">
       <a href={`/prodotti/${product.permalink}`} className="flex-1">
         <img className="p-8 rounded-t-lg w-full" src={product.image.url} alt="product" />
       </a>
-      <div className="py-5 px-5 flex flex-col h-full justify-between flex-2 gap-5">
+      <div className="p-2 xl:p-5 flex flex-col h-full justify-between flex-2 gap-5">
         <a href={`/prodotti/${product.permalink}`}>
           <h5 className="text-xl font-semibold tracking-tight text-gray-900">{product.name}</h5>
         </a>
